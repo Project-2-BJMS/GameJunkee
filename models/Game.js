@@ -6,10 +6,11 @@ class Game extends Model {}
 
 Game.init(
     {
-        book_id: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         title: {
             type: DataTypes.STRING,
