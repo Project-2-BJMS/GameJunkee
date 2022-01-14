@@ -1,0 +1,33 @@
+{{!-- TODO:
+        1. div for the profile header
+        2. div to list posts by game title
+        3. add "New Post" button
+--}}
+
+<div class="profile-header-card">
+  <div class="profile-header-card-header">
+      <h2>Profile Page</h2>
+  </div>
+  <div class="profile-header-card-body">
+      {{user_name}}
+    <p>
+      Current Favorite Game
+    </p>
+  </div>
+</div>
+
+<div class="profile-posts-card">
+  <div class="profile-posts-card-header">
+      <h2>Posts</h2>
+  </div>
+  <div class="profile-posts-card-body">
+      {{user_game}}
+  </div>
+</div>
+
+<br />
+<button type='submit' value='Submit'>
++ New Post
+</button>
+
+<script src='../public/js/TODO'></script>
