@@ -1,0 +1,50 @@
+{{!-- should displayPost template also include a form for other users to create and append a comment to this page? --}}
+{{!-- are users able to edit their own posts? comments? --}}
+{{!-- TODO:
+        1.  
+--}}
+
+<div class='post-container'>
+  <div class='card-header col-md-10'>
+    <h2>GameJunkee</h2>
+  </div>
+    <div class='dish col-md-5'>
+      <p>
+        {{user_name}} is playing... {{user_game}}
+      </p>
+    </div>
+    <div class='col-md-7'>
+      <p>
+        {{user_post}}
+      </p>
+    </div>
+  <div class='add-comment-container'>
+    <h2>
+      Comments
+    </h2>
+    <form class='new-comment-form'>
+      <label for='user_name'>
+        Username:
+      </label>
+      <br />
+      <textarea id='user_name' name='user_name' placeholder='Username' rows='2' cols='30'>
+        {{user_name}}
+      </textarea>
+      <br />
+      <label for='comment'>
+        Comment:
+      </label>
+      <br />
+      <textarea id='comment' name='comment' placeholder='Write your comments here.' rows='5' cols='30'>
+        {{comment}}
+      </textarea>
+      <br />
+      <button type='submit' value='Submit'>
+        Comment
+      </button>
+    </form>
+  </div>
+</div>
+
+{{!-- this should append other user's comments to post page --}}
+<script src='../public/js/TODO'></script>
