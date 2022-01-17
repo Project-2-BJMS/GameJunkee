@@ -19,10 +19,10 @@ Comment.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        game_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
+        // game_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true
+        // },
         comment_body: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -35,8 +35,10 @@ Comment.init(
     },
     {
         sequelize,
-        timestamps: true,
-        underscored: true
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'comment',
     }
 )
 

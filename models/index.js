@@ -2,6 +2,8 @@ const Game = require('./Game')
 const User = require('./User')
 const Post = require('./Post')
 const Comment = require('./Comment')
+const PostGame = require('./PostGame')
+const CommentGame = require('./CommentGame')
 
 
 Post.belongsTo(User, {
@@ -33,25 +35,26 @@ Post.hasMany(Comment, {
 
 
 
-Post.hasOne(Game, {
-    foreignKey: 'game_id'
-})
 Game.belongsToMany(Post, {
-    foreignKey: 'post_id'
-})
+    through: PostGame
+  })
+
+  Post.belongsToMany(Game, {
+    through: PostGame
+  })
 
 
-Comment.hasOne(Game, {
-    foreignKey: 'game_id'
-})
-Game.belongsToMany(Comment, {
-    foreignKey: 'comment_id'
-})
+  Game.belongsToMany(Comment, {
+    through: CommentGame
+  })
+
+  Comment.belongsToMany(Game, {
+    through: CommentGame
+  })
 
 
 
 
 
 
-module.exports = {Game, User, Post, Comment}
-
+module.exports = {Game, User, Post, Comment, PostGame, CommentGame}
