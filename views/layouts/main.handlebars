@@ -9,13 +9,26 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        &#127881 Potluck Party! &#127881
+        &#127881 GameJunkee! &#127881
       </h1>
+      <nav>
+        {{#if logged_in}}
+        <a class='profile-btn nav-btn mx-2' href='/profile'>profile</a>
+        <button class='no-button nav-btn mx-2' id='logout'>logout</button>
+        {{else}}
+        <a class='login-btn nav-btn mx-2' id='login-btn' href="/login">LOGIN</a>
+        {{/if}}
+      </nav>
     </header>
-      <main class="container container-fluid mt-5">
-        {{{ body }}}
-      </main>
+    <main class="container container-fluid mt-5">
+      {{{ body }}}
+    </main>
   </div>
-  </body>
+
+  {{#if logged_in}}
+  <script src='/js/logout.js'></script>
+  {{/if}}
+
+</body>
 
 </html>

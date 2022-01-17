@@ -1,0 +1,15 @@
+header, .project:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  header {
+    background-color: #176e96;
+  }
+  
+#login-btn {
+    color: yellow;
+}
+  
+  
+  
+  
