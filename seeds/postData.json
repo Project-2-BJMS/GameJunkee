@@ -1,22 +1,14 @@
 [
     {
-        "user_id": 1,
-        "game_id": 2,
         "post_body": "this is a post"
     },
     {
-        "user_id": 3,
-        "game_id": 4,
         "post_body":  "just a simple post here"
     },
     {
-        "user_id": 5,
-        "game_id": 6, 
         "post_body": "another post"
     },
     {
-        "user_id": 7,
-        "game_id": 8,
         "post_body": "poooooooost"
     }
 ]
