@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('config/connection.js');
+const sequelize = require('../config/connection.js');
 
 
 class Game extends Model {}
@@ -17,13 +17,20 @@ Game.init(
             allowNull: false,
         },
         img_url: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false,
+            // validate: {
+            //     isUrl: true,
+            // },
+            
         }
     },
     {
         sequelize,
-        timestamps: true,
-        underscored: true
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'game',
     }
 );
 
