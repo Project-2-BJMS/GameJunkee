@@ -1,15 +1,14 @@
 header, .project:not(:last-child) {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 3px solid rgb(202, 115, 115);
   }
   
   header {
-    background-color: #176e96;
+    background-color: #ca231d;
   }
   
 #login-btn {
     color: yellow;
 }
-  
   
   
   
