@@ -1,15 +1,22 @@
-{{!-- TODO: 
-        1. add a search bar at the top,
-        2. add button for "Login or Sign Up" to top right corner
-        3. figure out how to dynamically update with most recent posts 
+{{!-- TODO:
+1. add a search bar at the top,
+2. add button for "Login or Sign Up" to top right corner
+3. figure out how to dynamically update with most recent posts
 --}}
+{{!-- <form class='form create-post'>
+  <div class='form-group'>
+    <label for='game-search'>Search a Game</label>
+    <input class='form-input' type='text' id='game-search'></textarea>
+  </div>
+</form> --}}
 
-<div class="home-card">
+
+{{!-- <div class="home-card">
   <div class="home-card-header">
-      <h2>GameJunkee</h2>
+    <h2>GameJunkee</h2>
   </div>
   <div class="home-card-body">
-      <h2>Most Recent Posts</h2>
+    <h2>Most Recent Posts</h2>
     <p>
       Post 1
     </p>
@@ -20,6 +27,25 @@
       Post 3
     </p>
   </div>
+</div> --}}
+
+{{!--
+<script src='../public/js/login.js'></script> --}}
+
+<div class='row mb-3 justify-space-around'>
+  <h1>YOU GOT TEXT HERE!</h1>
 </div>
 
-<script src='../public/js/login.js'></script>
+<form class='form post-game'>
+  <div class='form-group'>
+    <label for='game-search'>Search a Game</label>
+    <input class='form-input' type='text' id='game-search'></input>
+  </div>
+  <div class='form-group'>
+    <button type='submit' class='btn btn primary' id='submit-game'>Submit Post</button>
+  </div>
+</form>
+
+
+
+<script src='/js/game.js'></script>
