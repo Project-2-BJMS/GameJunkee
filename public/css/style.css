@@ -1,9 +1,13 @@
+* {
+    font-family: 'Poppins', sans-serif !important;
+}
+
 header, .project:not(:last-child) {
     border-bottom: 3px solid rgb(202, 115, 115);
   }
   
   header {
-    background-color: #ca231d;
+    background-color: #292929;
   }
   
 #login-btn {

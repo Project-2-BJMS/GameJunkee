@@ -17,13 +17,16 @@ Game.init(
             allowNull: false,
         },
         img_url: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT,
+            allowNull: false,
         }
     },
     {
         sequelize,
-        timestamps: true,
-        underscored: true
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'game',
     }
 );
 
