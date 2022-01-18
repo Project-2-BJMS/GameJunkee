@@ -32,19 +32,9 @@
 {{!--
 <script src='../public/js/login.js'></script> --}}
 
-<div class='row mb-3 justify-space-around'>
-  <h1>YOU GOT TEXT HERE!</h1>
+<div class='row m justify-space-around'>
+  <h1>Latest Posted Games:</h1>
 </div>
-
-<form class='form post-game'>
-  <div class='form-group'>
-    <label for='game-search'>Search a Game</label>
-    <input class='form-input' type='text' id='game-search'></input>
-  </div>
-  <div class='form-group'>
-    <button type='submit' class='btn btn primary' id='submit-game'>Submit Post</button>
-  </div>
-</form>
 
 <div class='row mb-3 justify-space-around each-post'>
   {{#each posts as |post| }}
@@ -52,16 +42,18 @@
   <div class="col-md-5 my-5 post-card">
     <div class="row">
       <div class="game-post text-center">
-          <h4>
-            <a href="/post/{{post.id}}">{{post.game.title}}</a>
-          </h4>
-          <img class='game-image my-1' alt="game cover" src={{post.game.img_url}}>
-          <h6 class='user-post'>
-            {{post.post_body}}
-          </h6>
-          <p class='user-tag'>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
-        </div>
+        <h2 class='user-posted'>Posted by {{post.user.username}}</h2>
+        <img class='game-image my-1' alt="game cover" src={{post.game.img_url}}>
+        </a>
+        <h4>
+          <a href="/post/{{post.id}}">{{game.title}}
+        </h4>
+        <h6 class='user-post'>
+          {{post.post_body}}
+        </h6>
+        <p class='user-tag'>{{format_date post.date_created}}</p>
       </div>
+    </div>
   </div>
 
 

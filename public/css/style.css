@@ -18,6 +18,11 @@ header, .project:not(:last-child) {
     font-size: 200%;
     letter-spacing: 7px;
     font-style: italic;
+    background-color: blue;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 10px solid white;
+    border-radius: 20px;
   }
 
 main {
@@ -62,6 +67,10 @@ h2 {
   flex-direction: row;
   /* margin-left: -15px; */
   margin-right: -15px;
+}
+
+.user-posted {
+  color: gold;
 }
 
 .user-post {
