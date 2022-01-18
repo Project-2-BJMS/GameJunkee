@@ -4,7 +4,6 @@ const { User, Post, Game, } = require('../models');
 const userData = require('./userData.json');
 const postData = require('./postData.json');
 const gameData = require('./gameData.json');
-const seedPostGame = require('./post-game-seed')
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -24,11 +23,8 @@ const seedDatabase = async () => {
         await Post.create({
             ...post,
             user_id: users[Math.floor(Math.random() * users.length)].id,
-            // game_id: games.id
-        });
+            game_id: games[Math.floor(Math.random() * users.length)].id,        });
     }
-
-    await seedPostGame()
 
     process.exit(0);
 };
