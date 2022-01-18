@@ -42,8 +42,9 @@
   <div class="col-md-5 my-5 post-card">
     <div class="row">
       <div class="game-post text-center">
-        <h2 class='user-posted'>Posted by {{post.user.username}}</h2>
-        <img class='game-image my-1' alt="game cover" src={{post.game.img_url}}>
+        <a href="/post/{{post.id}}">
+          <h2 class='user-posted'>Posted by {{post.user.username}}</h2>
+          <img class='game-image my-1' alt="game cover" src={{post.game.img_url}}>
         </a>
         <h4>
           <a href="/post/{{post.id}}">{{game.title}}

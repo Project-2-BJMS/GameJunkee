@@ -16,6 +16,10 @@ header, .project:not(:last-child) {
     background-position: center top;
   }
 
+  a {
+    color: black;
+  }
+
   .home-icon {
     margin-left: 50px;
     font-size: 200%;
@@ -26,6 +30,16 @@ header, .project:not(:last-child) {
     padding-right: 25px;
     border: 10px solid rgb(0, 0, 0);
     border-radius: 20px;
+  }
+
+  .home-icon:hover {
+    background-color: rgb(95, 72, 10);
+    color: rgb(241, 181, 15);
+    border: 10px solid rgb(241, 181, 15);
+
+
+
+
   }
 
 main {

@@ -11,13 +11,14 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="row display-flex justify-space-between align-center p-2">
-      <h1 class='home-icon ml-5'>
+      <a href='/'><h1 class='home-icon ml-5'>
          GameJunkee! 
       </h1>
+      </a>
       <nav>
         {{#if logged_in}}
-        <a class='profile-btn nav-btn mx-2' href='/profile'>profile</a>
-        <button class='no-button nav-btn mx-2' id='logout'>logout</button>
+        <a class='profile-btn nav-btn mx-2' href='/profile'>PROFILE</a>
+        <button class='no-button nav-btn mx-2' id='logout'>LOGOUT</button>
         {{else}}
         <a class='login-btn nav-btn mx-2' id='login-btn' href="/login">LOGIN</a>
         {{/if}}
