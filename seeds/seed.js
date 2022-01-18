@@ -6,6 +6,7 @@ const postData = require('./postData.json');
 const gameData = require('./gameData.json');
 
 
+
 const casual = require('casual')
 // const seedDatabase = async () => {
 //     await sequelize.sync({ force: true });
