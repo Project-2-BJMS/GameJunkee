@@ -19,7 +19,7 @@ html {
  */
 body {
   margin: 0;
-  background-color: #e44f35;
+  background-color: rgb(206, 154, 10);
 }
 
 /**
@@ -1172,9 +1172,9 @@ form [type='radio'] {
   margin-right: auto;
 }
 
-.container.container-fluid {
+/* .container.container-fluid {
   width: 92%;
-}
+} */
 
 /* FLEX CONTENT */
 .flex-row {

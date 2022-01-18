@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/post/:id', isAuth, async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -38,12 +38,15 @@ router.get('/post/:id', isAuth, async (req, res) => {
                     attributes: ['username'],
                 },
                 {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                }
+                    model: Game, 
+                },
+                // {
+                //     model: Comment,
+                //     include: {
+                //         model: User,
+                //         attributes: ['username']
+                //     }
+                // }
             ],
         })  
         
@@ -51,7 +54,7 @@ router.get('/post/:id', isAuth, async (req, res) => {
 
         res.render('post', {
             ...post,
-            logged_in: req.session.logged_in
+            // logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status(500).json(err);

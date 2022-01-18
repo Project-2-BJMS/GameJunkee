@@ -3,20 +3,101 @@
 }
 
 header, .project:not(:last-child) {
-    border-bottom: 3px solid rgb(202, 115, 115);
+    border-bottom: 3px solid rgb(255, 247, 202);
   }
   
   header {
-    background-color: #292929;
+    background-color: #56b6f7;
+    color: rgb(0, 0, 0);
+    font-size: 150%;
+    height: 150px;
+    background-image: url("../images/game-controller.jpg");
+    background-attachment: fixed;
+    background-position: center top;
   }
+
+  a {
+    color: black;
+  }
+
+  .home-icon {
+    margin-left: 50px;
+    font-size: 200%;
+    letter-spacing: 7px;
+    font-style: italic;
+    background-color: rgb(241, 181, 15);
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 10px solid rgb(0, 0, 0);
+    border-radius: 20px;
+  }
+
+  .home-icon:hover {
+    background-color: rgb(95, 72, 10);
+    color: rgb(241, 181, 15);
+    border: 10px solid rgb(241, 181, 15);
+
+
+
+
+  }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+h2 {
+  text-align: center;
+}
   
 #login-btn {
     color: yellow;
 }
 
 .game-image {
-  height: 200px;
+  height: 275px;
+  width: 200px;
+  border: solid 2px black;
 }
+
+.game-image:hover {
+  height: 290px;
+  width: 215px;
+  cursor: pointer;
+}
+
+.game-post {
+  background-color: #303030;
+  width: 300px;
+  padding-top: 15px;
+  padding-top: 15px;
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow: 20px 20px 10px black;
+}
+
+.each-post {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* margin-left: -15px; */
+  margin-right: -15px;
+}
+
+.user-posted {
+  color: gold;
+}
+
+.user-post {
+  color: aliceblue;
+
+}
+.user-tag {
+color: aliceblue;
+}
+
   
   
   
