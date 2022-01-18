@@ -14,32 +14,32 @@ const secretKey = "zknzxg77aaag3061h9g2mcdcuke1py";
 // Function that retrieves access token
 
 
-function accessToken() {
-    axios({
-        url: "https://id.twitch.tv/oauth2/token",
-        method: 'POST',
-        data: {
-            'client_id': client_id,
-            'client_secret': secretKey,
-            'grant_type': "client_credentials"
-        },
-    })
-        .then(response => {
-            console.log(response.data);
-        })
-        .catch(err => {
-            console.error(err);
-        });
-}
+// function accessToken() {
+//     axios({
+//         url: "https://id.twitch.tv/oauth2/token",
+//         method: 'POST',
+//         data: {
+//             'client_id': client_id,
+//             'client_secret': secretKey,
+//             'grant_type': "client_credentials"
+//         },
+//     })
+//         .then(response => {
+//             console.log(response.data);
+//         })
+//         .catch(err => {
+//             console.error(err);
+//         });
+// }
 // Function for user to input a keyword and get responses of games with their names, cover image, summary, and url
-function gameSearch(event) {
+const gameSearch = async (event) => {
     event.preventDefault()
 
     const searchGame = document.querySelector('#game-search').value.trim()
     console.log(searchGame)
 
     const game = searchGame.toString()
-    axios({
+    await axios({
         url: "https://api.igdb.com/v4/games",
         method: 'POST',
         headers: {
@@ -57,7 +57,7 @@ function gameSearch(event) {
         });
 
 }
-accessToken();
+// accessToken();
 // gameSearch(searchGame);
 
 
