@@ -17,8 +17,12 @@ Game.init(
             allowNull: false,
         },
         img_url: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
+            // validate: {
+            //     isUrl: true,
+            // },
+            
         }
     },
     {

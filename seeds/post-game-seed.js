@@ -3,11 +3,11 @@ const { PostGame } = require('../models');
 const postGameData = [
   {
     post_id: 1,
-    game_id: 2,
+    game_id: 1,
   },
   {
     post_id: 2,
-    game_id: 1,
+    game_id: 2,
   },
   {
     post_id: 3,
