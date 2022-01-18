@@ -46,21 +46,26 @@
   </div>
 </form>
 
-<div class='row mb-3 justify-space-around'>
-{{#each posts as |post| }}
+<div class='row mb-3 justify-space-around each-post'>
+  {{#each posts as |post| }}
+
   <div class="col-md-5 my-5 post-card">
-    <h2>
-      <a href="/post/{{post.id}}">{{post.name}}</a>
-    </h2>
-    <h4>{{post.game.title}}</h4>
-    <img class='game-image' alt="game cover" src={{post.game.img_url}}>
-    <h6>
-      {{post.post_body}}
-    </h6>
-    <p>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+    <div class="row">
+      <div class="game-post text-center">
+          <h4>
+            <a href="/post/{{post.id}}">{{post.game.title}}</a>
+          </h4>
+          <img class='game-image my-1' alt="game cover" src={{post.game.img_url}}>
+          <h6 class='user-post'>
+            {{post.post_body}}
+          </h6>
+          <p class='user-tag'>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+        </div>
+      </div>
   </div>
 
-{{/each}}
+
+  {{/each}}
 </div>
 
 

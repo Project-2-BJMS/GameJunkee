@@ -3,20 +3,75 @@
 }
 
 header, .project:not(:last-child) {
-    border-bottom: 3px solid rgb(202, 115, 115);
+    border-bottom: 3px solid rgb(255, 247, 202);
   }
   
   header {
-    background-color: #292929;
+    background-color: #56b6f7;
+    color: white;
+    font-size: 150%;
+    height: 110px;
   }
+
+  .home-icon {
+    margin-left: 50px;
+    font-size: 200%;
+    letter-spacing: 7px;
+    font-style: italic;
+  }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+h2 {
+  text-align: center;
+}
   
 #login-btn {
     color: yellow;
 }
 
 .game-image {
-  height: 200px;
+  height: 275px;
+  width: 200px;
+  border: solid 2px black;
 }
+
+.game-image:hover {
+  height: 290px;
+  width: 215px;
+  cursor: pointer;
+}
+
+.game-post {
+  background-color: #303030;
+  width: 300px;
+  padding-top: 15px;
+  padding-top: 15px;
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow: 20px 20px 10px black;
+}
+
+.each-post {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* margin-left: -15px; */
+  margin-right: -15px;
+}
+
+.user-post {
+  color: aliceblue;
+
+}
+.user-tag {
+color: aliceblue;
+}
+
   
   
   
