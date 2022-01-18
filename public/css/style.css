@@ -8,9 +8,12 @@ header, .project:not(:last-child) {
   
   header {
     background-color: #56b6f7;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 150%;
-    height: 110px;
+    height: 150px;
+    background-image: url("../images/game-controller.jpg");
+    background-attachment: fixed;
+    background-position: center top;
   }
 
   .home-icon {
@@ -18,10 +21,10 @@ header, .project:not(:last-child) {
     font-size: 200%;
     letter-spacing: 7px;
     font-style: italic;
-    background-color: blue;
+    background-color: rgb(241, 181, 15);
     padding-left: 25px;
     padding-right: 25px;
-    border: 10px solid white;
+    border: 10px solid rgb(0, 0, 0);
     border-radius: 20px;
   }
 
