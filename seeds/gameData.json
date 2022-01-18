@@ -1,18 +1,18 @@
 [
     {
-        "title":"cool game",
-        "img_url":"website.com"
+        "title":"Halo Infinite",
+        "img_url": "https://s2.gaming-cdn.com/images/products/2674/271x377/halo-infinite-campaign-pc-xbox-one-xbox-series-xs-pc-xbox-one-xbox-serie-x-s-game-microsoft-store-cover.jpg"
     },
     {
-        "title":"super cool game 2",
-        "img_url":"website.com"
+        "title":"Super Mario Party",
+        "img_url": "https://m.media-amazon.com/images/I/91DTMquoGiS._SY445_.jpg"
     },
     {
-        "title":"awesome game",
-        "img_url":"website.com"
+        "title":"Animal Crossing New Horizons",
+        "img_url":"https://s1.gaming-cdn.com/images/products/4809/271x377/game-nintendo-animal-crossing-new-horizons-switch-cover.jpg"
     },
     {
-        "title":"Sea of Theives, an awesome game",
-        "img_url":"website.com"
+        "title":"Assassin's Creed Valhalla",
+        "img_url":"https://cdn1.epicgames.com/400347196e674de89c23cc2a7f2121db/offer/AC%20KINGDOM%20PREORDER_STANDARD%20EDITION_EPIC_Key_Art_Portrait_640x854-640x854-288120c5573756cb988b6c1968cebd86.png"
     }
 ]

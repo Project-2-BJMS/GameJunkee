@@ -1,22 +1,22 @@
 [
-{
-    "username":"miles",
-    "email": "miles@mail.com",
-    "password": "Password1"
-},
-{
-    "username": "bleh",
-    "email":"bleh@mail.com",
-    "password":"Password1"
-},
-{
-    "username":"jonathan",
-    "email":"jonathan@mail.com",
-    "password": "Password1"
-},
-{
-    "username":"sam",
-    "email":"sam@mail.com",
-    "password": "Password1"
-}
-]
+    {
+        "username":"miles",
+        "email": "miles@mail.com",
+        "password": "Password1"
+    },
+    {
+        "username": "bleh",
+        "email":"bleh@mail.com",
+        "password":"Password1"
+    },
+    {
+        "username":"jonathan",
+        "email":"jonathan@mail.com",
+        "password": "Password1"
+    },
+    {
+        "username":"sam",
+        "email":"sam@mail.com",
+        "password": "Password1"
+    }
+    ]
