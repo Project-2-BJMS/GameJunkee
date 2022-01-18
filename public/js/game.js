@@ -1,7 +1,7 @@
 // Require axios to access igdb database
 // const axios = require('axios');
 
-// Form ID
+// Form 
 const form = document.querySelector('.post-game');
 
 // Api Information
@@ -78,18 +78,15 @@ const postGame = (game) => {
         },
         body: `fields id, name, cover.image_id, summary, url; where name ~ *"${game}"*; sort rating asc; limit 10;`,
     })
-        .then(response => {
-            response.json();
-            console.log(game);
-        })
-        .then(post => {
-            console.log(post);
-            console.log(postGame);
-        })
-        .catch(err => {
-            console.error(err);
-        });
-        console.log(postGame);
+        .then(response => 
+            response.json()
+        )
+        .then(data => 
+            console.log(data)
+        )
+        .catch(err => 
+            console.error(err)
+        );
 }
 
 // Function to handle when a user submits the feedback form
@@ -104,7 +101,7 @@ const handleFormSubmit = (e) => {
     // Make a fetch POST request to the server
     postGame(gameName);
     gameInput.value = '';
-  };
+};
   
-  // Listen for when the form is submitted
-  form.addEventListener('submit', handleFormSubmit);
+// Listen for when the form is submitted
+form.addEventListener('submit', handleFormSubmit);
