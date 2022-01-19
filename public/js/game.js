@@ -1,5 +1,9 @@
 // Require axios to access igdb database
-const axios = require('axios');
+// const axios = require('axios');
+
+// Form 
+const form = document.querySelector('.post-game');
+
 // Api Information
 // Access token
 const authorization = 'ta5b18wx16vse70z5zuvikmrtbwbjg';
@@ -15,8 +19,7 @@ const secretKey = "zknzxg77aaag3061h9g2mcdcuke1py";
 
 
 // function accessToken() {
-//     axios({
-//         url: "https://id.twitch.tv/oauth2/token",
+//     fetch("https://id.twitch.tv/oauth2/token",{
 //         method: 'POST',
 //         data: {
 //             'client_id': client_id,
@@ -58,12 +61,47 @@ const gameSearch = async (event) => {
 
 }
 // accessToken();
-// gameSearch(searchGame);
 
 
-document
-    .querySelector('.post-game')
-    .addEventListener('submit', gameSearch)
 // Image link for covers or screenshots
 // We can determine the size of the image once we start the front end
 // images.igdb.com/igdb/image/upload/t_${size}/{${cover.image_id}.jpg
+
+const postGame = (game) => {
+    return fetch("https://cors-test-run.herokuapp.com/https://api.igdb.com/v4/games", {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Accept': 'application/json',
+            'Client-ID': client_id,
+            'Authorization': `Bearer ${authorization}`,
+        },
+        body: `fields id, name, cover.image_id, summary, url; where name ~ *"${game}"*; sort rating asc; limit 10;`,
+    })
+        .then(response => 
+            response.json()
+        )
+        .then(data => 
+            console.log(data)
+        )
+        .catch(err => 
+            console.error(err)
+        );
+}
+
+// Function to handle when a user submits the feedback form
+const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submit invoked');
+  
+    const gameInput = document.getElementById('game-search');
+    // Get the value of the game and save it to a variable
+    const gameName = gameInput.value;
+    
+    // Make a fetch POST request to the server
+    postGame(gameName);
+    gameInput.value = '';
+};
+  
+// Listen for when the form is submitted
+form.addEventListener('submit', handleFormSubmit);
