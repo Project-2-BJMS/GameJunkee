@@ -5,73 +5,49 @@
         3. figure out the "confirm password" functionality
 --}}
 
-<div class='login-page-container'>
-  <div class='card-header col-md-10'>
-  </div>
-  <div class='login-container'>
-    <h2>Log in to my Account</h2>
-    <form class='login-form'>
-      <label for='user_name'>
-        Username:
-      </label>
-      <br />
-      <textarea id='user_name' name='user_name' placeholder='Username' rows='2' cols='30'>
-        {{user_name}}
-      </textarea>
-      <br />
-      <label for='user_password'>
-        Password:
-      </label>
-      <br />
-      <textarea id='user_password' name='user_password' placeholder='Password' rows='2' cols='30'>
-        {{user_password}}
-      </textarea>
-      <br />
-      <button type='submit' value='Submit'>
-        Login
-      </button>
-    </form>
-  </div>
-  <div class='sign_up-container'>
-    <h2>Sign Up</h2>
-    <form class='sign_up-form'>
-      <label for='user_email'>
-        Email:
-      </label>
-      <br />
-      <textarea id='user_email' name='user_email' placeholder='Email' rows='2' cols='30'>
-        {{user_email}}
-      </textarea>
-      <br />
-      <label for='user_name'>
-        Username:
-      </label>
-      <br />
-      <textarea id='user_name' name='user_name' placeholder='Username' rows='2' cols='30'>
-        {{user_name}}
-      </textarea>
-      <br />
-      <label for='user_password'>
-        Password:
-      </label>
-      <br />
-      <textarea id='user_password' name='user_password' placeholder='Password' rows='2' cols='30'>
-        {{user_password}}
-      </textarea>
-      <br />
-      <label for='confirm_password'>
-        Confirm Password:
-      </label>
-      <br />
-      <textarea id='confirm_password' name='confirm_password' placeholder='Confirm Password' rows='2' cols='30'>
-        {{confirm_password}}
-      </textarea>
-      <br />
-      <button type='submit' value='Submit'>
-        Sign Up
-      </button>
-    </form>
-  </div>
+<div class='row justify-space-around'>
+    <div class='col mb-2 lg-6'>
+        <h1 class='login-titles'>LOGIN</h1>
+
+        <form class='form login-user'>
+            <div class='form-group'>
+                <label for='login-email'>Email:</label>
+                <input class='form-input' type='email' id='login-email'>
+            </div>
+            <div class='form-group'>
+                <label for='login-password'>Password:</label>
+                <input class='form-input' type='password' id='login-password'>
+            </div>
+            <div class='form-group'>
+                <button type="submit" class="btn btn primary">LOGIN USER</button>
+            </div>
+        </form>
+    </div>
+    <div class='col mb-2 lg-6'>
+        <h1 class='login-titles'>CREATE NEW USER</h1>
+
+        <form class='form create-user'>
+            <div class='form-group'>
+                <label for='create-username'>Username:</label>
+                <input class='form-input' type='text' id='create-username'>
+            </div>
+            <div class='form-group'>
+                <label for='create-email'>Email:</label>
+                <input class='form-input' type='email' id='create-email'>
+            </div>
+            <div class='form-group'>
+                <label for='create-password'>Password:</label>
+                <input class='form-input' type='password' id='create-password'>
+            </div>
+            <div class='form-group'>
+                <label for='confirm-password'>Confirm Password:</label>
+                <input class='form-input' type='password' id='confirm-password'>
+            </div>
+            <div class='form-group'>
+                <button type="submit" class="btn btn success">CREATE NEW USER</button>
+            </div>
+        </form>
+    </div>
 </div>
 
-<script src='../public/js/profile.js'></script>
+<script src="./js/login.js"></script>
