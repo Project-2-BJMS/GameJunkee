@@ -23,6 +23,15 @@ Game.hasMany(Post, {
   })
 
 
+  Post.belongsTo(Game, {
+    foreignKey: 'game_id',
+  })
+  
+  Game.hasMany(Post, {
+    foreignKey: 'game_id',
+    })
+
+
 
 
 

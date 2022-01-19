@@ -16,15 +16,34 @@ header, .project:not(:last-child) {
     background-position: center top;
   }
 
-  a {
-    color: black;
+  .header-one {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .fa-search {
+    font-size: 300%;
+    padding: 5px;
+    margin-top: 4px;
+    margin-left: 25px;
+    color:rgb(241, 181, 15);
+    background-color: black;
+    border: 3px solid rgb(241, 181, 15);
+    border-radius: 10px;
+  }
+
+  .fa-search:hover {
+    font-size: 325%;
+    margin-left: 22px;
+    margin-top: 2px;
   }
 
   .home-icon {
-    margin-left: 50px;
+    margin-left: 30px;
     font-size: 200%;
     letter-spacing: 7px;
     font-style: italic;
+    color: black;
     background-color: rgb(241, 181, 15);
     padding-left: 25px;
     padding-right: 25px;
@@ -52,8 +71,14 @@ h2 {
   text-align: center;
 }
   
-#login-btn {
+.nav-btn {
+    background-color: rgb(66, 66, 66);
     color: yellow;
+    border: solid 2px yellow;
+    border-radius: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 80%;
 }
 
 .game-image {
@@ -82,7 +107,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  /* margin-left: -15px; */
+  margin-left: 50px;
   margin-right: -15px;
 }
 
@@ -98,6 +123,58 @@ h2 {
 color: aliceblue;
 }
 
+.menu-btn {
+  width: 90%;
+  margin: 20px;
+  background-color: rgb(221, 221, 221);
+  font-size: 300%;
+  border: solid 3px rgb(173, 0, 0);
+  border-radius: 15px;
+  letter-spacing: 3px;
+  font-weight: bolder;
+
+}
+
+.menu-btn:hover {
+  background-color: rgb(255, 255, 255);
+  border: solid 3px rgb(223, 2, 49);
+
+  height: 60%;
+  /* width: 90.5%; */
+  font-size: 305%;
+  margin-left: 18px;
+  box-shadow: 5px 5px 5px black;
+  cursor: pointer;
+  letter-spacing: 6px;
+  font-weight: bolder;
+
+}
+
+.post-image {
+  height: 475px;
+  width: 330px;
+}
+
+.latest-junk {
+  font-size: 400%;
+  background-color: white;
+  color:rgb(223, 2, 49);
+  border-left: solid 3px rgb(223, 2, 49);
+  border-bottom: solid 3px rgb(223, 2, 49);
+  padding-left: 50px;
+  padding-right: 50px;
+  box-shadow: 5px 5px 5px rgb(94, 41, 41);
+}
+
+.login-titles {
+  font-size: 300%;
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: white;
+  color:rgb(223, 2, 49);
+  border: solid 3px rgb(223, 2, 49);
+}
   
   
   
