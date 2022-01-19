@@ -12,11 +12,11 @@ router.get('/', async (req, res) => {
                     attributes: ['username'],
                 },
                 {
-                    model: Game, 
+                    model: Game,
                 },
             ],
         });
-        
+
         const posts = postData.map((post) => post.get({ plain: true }))
         // console.log(posts)
         res.render('homepage', {
@@ -33,6 +33,42 @@ router.get('/menu', (req, res) => {
     res.render('menu')
 })
 
+router.get('/gamesearch', (req, res) => {
+    // const gameData = await Game.findAll({})
+    // const games = gameData.map((game) => game.get({ plain: true }))
+    // console.log(games)
+
+    res.render('gamesearch', {
+
+    })
+})
+
+
+router.get('/gameget', async (req, res) => {
+    try {
+        const gameData = await Game.findAll(req.params.title, {
+            where: {
+                title: req.params.title
+            }
+        })
+        console.log(gameData, "HARRO")
+        if (!gameData) {
+            res.status(404).json({ message: 'No game found with that title!' });
+            return
+        }
+        res.status(200).json(gameData)
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/gameresult', (req, res) => {
+    res.render('gameresult')
+})
+
+
+
 router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
@@ -42,7 +78,7 @@ router.get('/post/:id', async (req, res) => {
                     attributes: ['username'],
                 },
                 {
-                    model: Game, 
+                    model: Game,
                 },
                 // {
                 //     model: Comment,
@@ -52,9 +88,9 @@ router.get('/post/:id', async (req, res) => {
                 //     }
                 // }
             ],
-        })  
-        
-        const post = postData.get({plain: true})
+        })
+
+        const post = postData.get({ plain: true })
 
         res.render('post', {
             ...post,
@@ -78,7 +114,7 @@ router.get('/profile', isAuth, async (req, res) => {
             ...user,
             logged_in: true
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })
@@ -86,14 +122,14 @@ router.get('/profile', isAuth, async (req, res) => {
 router.get('/login', async (req, res) => {
     try {
         if (req.session.logged_in) {
-        res.redirect('/profile');
-        return;
-    }
+            res.redirect('/profile');
+            return;
+        }
 
-    res.render('login')
-} catch(err) {
-    res.status(500).json(err)
-}
+        res.render('login')
+    } catch (err) {
+        res.status(500).json(err)
+    }
 })
 
 module.exports = router;

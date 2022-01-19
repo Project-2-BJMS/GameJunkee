@@ -124,20 +124,52 @@ color: aliceblue;
 }
 
 .menu-btn {
-  width: 90%;
+  width: 500px;
+  padding-left: 100px;
+  padding-right: 100px;
   margin: 20px;
   background-color: rgb(221, 221, 221);
+  color: black;
   font-size: 300%;
   border: solid 3px rgb(173, 0, 0);
   border-radius: 15px;
   letter-spacing: 3px;
   font-weight: bolder;
-
 }
+
+.profile-button {
+  padding-left: 210px;
+  padding-right: 210px;
+}
+/* .game-button {
+
+} */
+.home-button {
+  padding-left: 158px;
+  padding-right: 158px;
+}
+
+.login-user-card {
+  background-color: rgb(255, 255, 255);
+  padding: 25px;
+  border: solid 2px rgb(247, 30, 1);
+  border-radius: 15px;
+  height: 400px;
+}
+
+.create-user-card {
+  background-color: rgb(247, 30, 1);
+  padding: 25px;
+  border: solid 2px rgb(255, 255, 255);
+  border-radius: 15px;
+}
+
+
 
 .menu-btn:hover {
   background-color: rgb(255, 255, 255);
   border: solid 3px rgb(223, 2, 49);
+  color: red;
 
   height: 60%;
   /* width: 90.5%; */
@@ -166,7 +198,7 @@ color: aliceblue;
   box-shadow: 5px 5px 5px rgb(94, 41, 41);
 }
 
-.login-titles {
+.login-user-title {
   font-size: 300%;
   text-align: center;
   padding-left: 25px;
@@ -174,6 +206,17 @@ color: aliceblue;
   background-color: white;
   color:rgb(223, 2, 49);
   border: solid 3px rgb(223, 2, 49);
+  border-radius: 10px;
+}
+.create-user-title {
+  font-size: 300%;
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: rgb(151, 0, 33);
+  color:white;
+  border: solid 3px white;
+  border-radius: 10px;
 }
   
   
