@@ -114,3 +114,30 @@ const initListOfTasks = (data) => {
 };
 
 
+// Function to handle when a user submits the feedback form
+const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submit invoked');
+  
+    const gameInput = document.getElementById('game-search');
+    // Get the value of the game and save it to a variable
+    const gameName = gameInput.value;
+    
+    // Make a fetch POST request to the server
+    postGame(gameName)
+        .then(response => 
+            response.json()
+        )
+        .then(data => {
+            console.log(data)
+            initListOfTasks(data)
+        }
+        )
+        .catch(err => 
+            console.error(err)
+        );
+    gameInput.value = '';
+  };
+  
+  // Listen for when the form is submitted
+form.addEventListener('submit', handleFormSubmit);
