@@ -28,13 +28,13 @@ const createNewUser = async (event) => {
 const loginUser = async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector('#login-email').value.trim()
+    const username = document.querySelector('#login-username').value.trim()
     const password = document.querySelector('#login-password').value.trim()
 
-    if (email && password){
+    if (username && password){
         const response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, username }),
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {

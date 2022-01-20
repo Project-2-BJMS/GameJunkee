@@ -89,10 +89,10 @@ const gameCards = (games) => {
     summary.className = 'card-summary';
 
     let btn = document.createElement("button");
-    btn.innerHTML = "Post Game";
+    btn.innerHTML = "JUNK IT!";
     btn.type = "submit";
     btn.id = "submit-game";
-    btn.classList.add('btn', 'primary');
+    btn.classList.add('btn', 'success');
     
     cardBody.appendChild(gameTitle);
     cardBody.appendChild(image);
@@ -162,4 +162,10 @@ const handlePostGame = async (event) => {
     } 
 }
 
+
+
+
+
+
 formPostGame.addEventListener('submit', handlePostGame)
+
