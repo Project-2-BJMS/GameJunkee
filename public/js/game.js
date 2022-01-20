@@ -69,6 +69,8 @@ const postGame = (game) => {
 
 // Create cards for each game on the page
 let cardContainer;
+let image = document.createElement('img');
+let gameTitle = document.createElement('h4');
 
 const gameCards = (games) => {
     let card = document.createElement('div');
@@ -77,13 +79,11 @@ const gameCards = (games) => {
     let cardBody = document.createElement('div');
     cardBody.className = 'card-body';
 
-    let title = document.createElement('h4');
-    title.innerText = games.name;
-    title.className = 'card-title';
+    gameTitle.innerText = games.name;
+    gameTitle.className = games.name;
     
-    let image = document.createElement('img');
     image.src = `https://images.igdb.com/igdb/image/upload/t_cover_big/${games.cover.image_id}.jpg`;
-    image.className = 'card-image';
+    image.className = `https://images.igdb.com/igdb/image/upload/t_cover_big/${games.cover.image_id}.jpg`;
 
     let summary = document.createElement('p');
     summary.innerText = games.summary;
@@ -93,12 +93,14 @@ const gameCards = (games) => {
     url.innerText = games.url;
     url.className = 'card-url';
 
-    cardBody.appendChild(title);
+    cardBody.appendChild(gameTitle);
     cardBody.appendChild(image);
     cardBody.appendChild(summary);
     cardBody.appendChild(url);
     card.appendChild(cardBody);
     dish.append(card);
+    console.log(image.className)
+    console.log(gameTitle.className)
 
 }
 
@@ -144,16 +146,12 @@ const handleFormSubmit = (e) => {
   // Listen for when the form is submitted
 form.addEventListener('submit', handleFormSubmit);
 
-let gameImage = document.querySelector('.game-image')
-gameImage.setAttribute('style', 'display: hidden')
-let gameTitle = document.querySelector('.game-title')
-let image;
-let title;
-
 const handlePostGame = async (event) => {
     event.preventDefault();
-    const title = gameTitle.innerHTML
-    const img_url = gameImage.getAttribute('src')
+    const title = gameTitle.className;
+    console.log(title);
+    const img_url = image.className;
+    console.log(img_url);
     const response = await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify({ title, img_url }),
