@@ -1,6 +1,7 @@
 // Targeting area of the form
 const form = document.querySelector('.search-game');
 const dish = document.querySelector('.form-group');
+const formPostGame = document.querySelector('.post-game');
 
 
 // Api Information
@@ -68,6 +69,7 @@ const postGame = (game) => {
 
 // Create cards for each game on the page
 let cardContainer;
+
 const gameCards = (games) => {
     let card = document.createElement('div');
     card.className = 'card';
@@ -141,3 +143,28 @@ const handleFormSubmit = (e) => {
   
   // Listen for when the form is submitted
 form.addEventListener('submit', handleFormSubmit);
+
+let gameImage = document.querySelector('.game-image')
+gameImage.setAttribute('style', 'display: hidden')
+let gameTitle = document.querySelector('.game-title')
+let image;
+let title;
+
+const handlePostGame = async (event) => {
+    event.preventDefault();
+    const title = gameTitle.innerHTML
+    const img_url = gameImage.getAttribute('src')
+    const response = await fetch('/api/posts', {
+        method: 'POST',
+        body: JSON.stringify({ title, img_url }),
+        headers:  { 'Content-Type': 'application/json' },
+
+    })
+    if(response.ok) {
+        document.location.replace('/profile')
+    } else {
+        alert(response.statusText)
+    } 
+}
+
+formPostGame.addEventListener('submit', handlePostGame)
