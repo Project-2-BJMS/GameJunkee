@@ -1,6 +1,6 @@
 // Targeting area of the form
 const form = document.querySelector('.search-game');
-const dish = document.querySelector('.form-group');
+const dish = document.querySelector('.post-game');
 const formPostGame = document.querySelector('.post-game');
 
 
@@ -98,7 +98,7 @@ const gameCards = (games) => {
     cardBody.appendChild(summary);
     cardBody.appendChild(url);
     card.appendChild(cardBody);
-    dish.appendChild(card);
+    dish.append(card);
 
 }
 
