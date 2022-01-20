@@ -1,5 +1,5 @@
 // Targeting area of the form
-const form = document.querySelector('.post-game');
+const form = document.querySelector('.search-game');
 const dish = document.querySelector('.form-group');
 
 
@@ -54,7 +54,7 @@ const postGame = (game) => {
             'Client-ID': client_id,
             'Authorization': `Bearer ${authorization}`,
         },
-        body: `fields id, name, cover.image_id, summary, url; where name ~ *"${game}"*; sort rating desc; limit 3;`,
+        body: `fields id, name, cover.image_id, summary, url; where name ~ *"${game}"*; sort rating desc; limit 1;`,
     })
         
 }
