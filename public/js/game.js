@@ -55,7 +55,7 @@ const postGame = (game) => {
             'Client-ID': client_id,
             'Authorization': `Bearer ${authorization}`,
         },
-        body: `fields id, name, cover.image_id, summary, url; where name ~ *"${game}"*; sort rating desc; limit 1;`,
+        body: `fields id, name, cover.image_id, summary; search "${game}"; where version_parent = null; limit 1;`,
     })
         
 }
@@ -68,7 +68,6 @@ const postGame = (game) => {
 
 
 // Create cards for each game on the page
-let cardContainer;
 let image = document.createElement('img');
 let gameTitle = document.createElement('h4');
 
@@ -82,36 +81,34 @@ const gameCards = (games) => {
     gameTitle.innerText = games.name;
     gameTitle.className = games.name;
     
-    image.src = `https://images.igdb.com/igdb/image/upload/t_cover_big/${games.cover.image_id}.jpg`;
+    image.src = `https://images.igdb.com/igdb/image/upload/t_720p/${games.cover.image_id}.jpg`;
     image.className = `https://images.igdb.com/igdb/image/upload/t_cover_big/${games.cover.image_id}.jpg`;
 
     let summary = document.createElement('p');
     summary.innerText = games.summary;
     summary.className = 'card-summary';
 
-    let url = document.createElement('h5');
-    url.innerText = games.url;
-    url.className = 'card-url';
-
+    let btn = document.createElement("button");
+    btn.innerHTML = "Post Game";
+    btn.type = "submit";
+    btn.id = "submit-game";
+    btn.classList.add('btn', 'primary');
+    
     cardBody.appendChild(gameTitle);
     cardBody.appendChild(image);
     cardBody.appendChild(summary);
-    cardBody.appendChild(url);
     card.appendChild(cardBody);
+    card.appendChild(btn);
     dish.append(card);
-    console.log(image.className)
-    console.log(gameTitle.className)
+    console.log(btn);
+    console.log(image.className);
+    console.log(gameTitle.className);
 
 }
 
 
 const initListOfTasks = (data) => {
-    if (cardContainer) {
-        document.getElementById('card-container').replaceWith(cardContainer);
-        return;
-    }
-
-    cardContainer = document.querySelector('.post-container');
+    dish.innerHTML = '';
     data.forEach((game) => {
         gameCards(game);
     });
