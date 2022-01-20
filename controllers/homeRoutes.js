@@ -17,6 +17,9 @@ router.get('/', async (req, res) => {
             ],
         });
 
+
+
+
         const posts = postData.map((post) => post.get({ plain: true }))
         // console.log(posts)
         res.render('homepage', {
@@ -63,11 +66,27 @@ router.get('/gameget', async (req, res) => {
     }
 });
 
-router.get('/gameresult', (req, res) => {
-    res.render('gameresult')
-})
+// router.get('/gameresult', (req, res) => {
+//     res.render('gameresult')
+// })
 
+router.get('/profile', isAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Game }],
+        });
 
+        const user = userData.get({ plain: true })
+
+        res.render('profile', {
+            ...user,
+            logged_in: true
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
 
 router.get('/post/:id', async (req, res) => {
     try {
@@ -105,13 +124,35 @@ router.get('/profile', isAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Post }],
+            include: [{ model: Game }],
         });
 
         const user = userData.get({ plain: true })
 
         res.render('profile', {
             ...user,
+            logged_in: true
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+router.get('/redirect/:id', isAuth, async (req, res) => {
+    try {
+        const gameData = await Game.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        });
+
+        const game = gameData.get({ plain: true })
+
+        res.render('createpost', {
+            ...game,
             logged_in: true
         })
     } catch (err) {

@@ -218,6 +218,16 @@ color: aliceblue;
   border: solid 3px white;
   border-radius: 10px;
 }
+
+.btn-success {
+  background-color: rgb(3, 235, 3);
+}
+
+.junkyard-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   
   
   

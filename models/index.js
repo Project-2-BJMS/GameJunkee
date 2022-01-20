@@ -13,6 +13,14 @@ User.hasMany(Post, {
     onDelete: 'CASCADE'
 })
 
+Game.belongsTo(User, {
+  foreignKey: 'user_id',
+})
+
+User.hasMany(Game, {
+  foreignKey: 'user_id',
+  })
+
 
 Post.belongsTo(Game, {
   foreignKey: 'game_id',

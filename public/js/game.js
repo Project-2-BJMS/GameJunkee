@@ -149,7 +149,7 @@ const handlePostGame = async (event) => {
     console.log(title);
     const img_url = image.className;
     console.log(img_url);
-    const response = await fetch('/api/posts', {
+    const response = await fetch('/api/games/', {
         method: 'POST',
         body: JSON.stringify({ title, img_url }),
         headers:  { 'Content-Type': 'application/json' },

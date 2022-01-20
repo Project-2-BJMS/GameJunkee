@@ -1,20 +1,20 @@
-// const router = require('express').Router();
-// const { Game } = require('../../models');
-// const isAuth = require('../../utils/auth');
+const router = require('express').Router();
+const { Game, User } = require('../../models');
+const isAuth = require('../../utils/auth');
 
-// router.post('/', isAuth, async (req, res) => {
-//   try {
-//     const newGame = await Game.create({
-//       ...req.body,
-//     });
+router.post('/', isAuth, async (req, res) => {
+  try {
+    const gameData = await Game.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
 
-//     res.status(200).json(newGame);
-//   } catch (err) {
-//     res.status(400).json(err);
-//     console.log(err)
-//     console.log(newPost)
-//   }
-// });
+    res.status(200).json(gameData);
+  } catch (err) {
+    res.status(400).json(err);
+    console.log(err)
+  }
+});
 
 
 
@@ -38,4 +38,4 @@
 //   }
 // });
 
-// module.exports = router;
+module.exports = router;

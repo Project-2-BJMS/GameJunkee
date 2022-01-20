@@ -1,7 +1,7 @@
 {{!-- TODO:
-        1. div for the profile header
-        2. div to list posts by game title
-        3. add "New Post" button
+1. div for the profile header
+2. div to list posts by game title
+3. add "New Post" button
 --}}
 
 <div class="row">
@@ -10,43 +10,30 @@
     </div>
 </div>
 
-<div class='row mt-4 justify-space-around new-post-card'>
-    <div class='col-md-6'>
-        <h1>CREATE A GAME POST</h1>
+<div class='row justify-space-around new-post-card'>
 
-        <form class='form create-post'>
-            <div class='form-group'>
-                <label for='post-name'>Post-Title</label>
-                <input class='form-input' type='text' id='post-name'>
-            </div>
-            <div class='form-group'>
-                <label for='post-body'>Description</label>
-                <textarea class='form-input' type='text' id='post-body'></textarea>
-            </div>
-            <div class='form-group'>
-                <button type='submit' class='btn btn primary'>Submit Post</button>
-            </div>
-        </form>
-
-    </div>
 
 
 
     <div class='col-md-6 user-posts'>
-        <h3 class='mb-5'>{{username}}'s Posts:</h3>
-    {{#if posts.length}}
-        {{#each posts as |post|}}
+        <h3 class='mb-5'>{{username}}'s Junkyard:</h3>
+        {{#if games.length}}
         <div class='row mb-2 justify-space-between'>
-            <div class='col md-9'>
-                <h2><a href='/post/{{post.id}}'>{{post.name}}</a></h2>
+
+            {{#each games as |game|}}
+            <div class='col md-4 junkyard-game'>
+                <h2>{{game.title}}</h2>
+                <img class='junkyard-game-image' src='{{game.img_url}}'>
+                <div class='junkyard-game-btns'>
+                    <a class="btn btn-sm btn-success make-post" href='/redirect/{{game.id}}'>SHARE</a>
+                    <button class="btn btn-sm btn-danger delete-post" data-id='{{game.id}}'>DELETE</button>
+                    <a class="btn btn-sm btn-secondary edit-post" href='/edit-post/{{post.id}}'>EDIT</a>
+                </div>
             </div>
-            <div class='col md-3'>
-                <button class="btn btn-sm btn-danger delete-post" data-id='{{post.id}}'>DELETE</button>
-                <a class="btn btn-sm btn-secondary edit-post" href='/edit-post/{{post.id}}'>EDIT</a>
-            </div>
+
         </div>
         {{/each}}
-            {{/if}}
+        {{/if}}
     </div>
 </div>
 
