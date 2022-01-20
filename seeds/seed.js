@@ -1,19 +1,92 @@
-const sequelize = require('../config/connection');
-const { User, Post, Game, } = require('../models');
+// const sequelize = require('../config/connection');
+// const { User, Post, Game, } = require('../models');
 
-// const userData = require('./userData.json');
-// const postData = require('./postData.json');
-const gameData = require('./gameData.json');
+// // const userData = require('./userData.json');
+// // const postData = require('./postData.json');
+// const gameData = require('./gameData.json');
 
 
-const casual = require('casual')
+// const casual = require('casual')
+// // const seedDatabase = async () => {
+// //     await sequelize.sync({ force: true });
+
+// //     const users = await User.bulkCreate(userData, {
+// //         individualHooks: true,
+// //         returning: true,
+// //     });
+// //     const games = await Game.bulkCreate(gameData, {
+// //         // individualHooks: true,
+// //         returning: true,
+// //     });
+
+
+
+// //     for (const post of postData) {
+// //         await Post.create({
+// //             ...post,
+// //             user_id: users[Math.floor(Math.random() * users.length)].id,
+// //             game_id: games[Math.floor(Math.random() * users.length)].id,        });
+// //     }
+
+// //     process.exit(0);
+// // };
+
+// const randomUserData = 
+// [
+//     {
+//         username: casual.username,
+//         email: casual.email,
+//         password: casual.password 
+//     },
+//     {
+//         username: casual.username,
+//         email: casual.email,
+//         password: casual.password 
+//     },
+//     {
+//         username: casual.username,
+//         email: casual.email,
+//         password: casual.password 
+//     },
+//     {
+//         username: casual.username,
+//         email: casual.email,
+//         password: casual.password 
+//     }
+// ]
+
+
+// const randomPostData = 
+// [
+//     {
+//         post_body: casual.sentence,
+//         date_created: casual.date(format = 'YYYY-MM-DD')
+//     },
+//     {
+//         post_body: casual.sentence,
+//         date_created: casual.date(format = 'YYYY-MM-DD')
+//     },
+//     {
+//         post_body: casual.sentence,
+//         date_created: casual.date(format = 'YYYY-MM-DD')
+//     },
+//     {
+//         post_body: casual.sentence,
+//         date_created: casual.date(format = 'YYYY-MM-DD')
+//     }
+// ]
+
+
+
+
 // const seedDatabase = async () => {
 //     await sequelize.sync({ force: true });
 
-//     const users = await User.bulkCreate(userData, {
+//     const users = await User.bulkCreate(randomUserData, {
 //         individualHooks: true,
 //         returning: true,
 //     });
+    
 //     const games = await Game.bulkCreate(gameData, {
 //         // individualHooks: true,
 //         returning: true,
@@ -21,87 +94,146 @@ const casual = require('casual')
 
 
 
-//     for (const post of postData) {
+//     for (const post of randomPostData) {
 //         await Post.create({
 //             ...post,
 //             user_id: users[Math.floor(Math.random() * users.length)].id,
-//             game_id: games[Math.floor(Math.random() * users.length)].id,        });
+//             game_id: games[Math.floor(Math.random() * users.length)].id,  });
+            
 //     }
-
+    
 //     process.exit(0);
 // };
 
-const randomUserData = 
-[
-    {
-        username: casual.username,
-        email: casual.email,
-        password: casual.password 
-    },
-    {
-        username: casual.username,
-        email: casual.email,
-        password: casual.password 
-    },
-    {
-        username: casual.username,
-        email: casual.email,
-        password: casual.password 
-    },
-    {
-        username: casual.username,
-        email: casual.email,
-        password: casual.password 
-    }
-]
+// seedDatabase();
 
 
-const randomPostData = 
-[
-    {
-        post_body: casual.sentence,
-        date_created: casual.date(format = 'YYYY-MM-DD')
-    },
-    {
-        post_body: casual.sentence,
-        date_created: casual.date(format = 'YYYY-MM-DD')
-    },
-    {
-        post_body: casual.sentence,
-        date_created: casual.date(format = 'YYYY-MM-DD')
-    },
-    {
-        post_body: casual.sentence,
-        date_created: casual.date(format = 'YYYY-MM-DD')
-    }
-]
+
+const sequelize = require('../config/connection');
+const { User, Post, Game, Comment } = require('../models');
+
+// const userData = require('./userData.json');
+// const postData = require('./postData.json');
+const gameData = require('./gameData.json');
+const commentData = require('./commentData.json')
+
+
+const casual = require('casual')
+
+
+const randomUserData =
+    [
+        {
+            username: casual.username,
+            email: casual.email,
+            password: casual.password
+        },
+        {
+            username: casual.username,
+            email: casual.email,
+            password: casual.password
+        },
+        {
+            username: casual.username,
+            email: casual.email,
+            password: casual.password
+        },
+        {
+            username: casual.username,
+            email: casual.email,
+            password: casual.password
+        }
+    ]
+
+
+const randomPostData =
+    [
+        {
+            post_body: casual.sentence,
+            date_created: casual.date(format = 'YYYY-MM-DD')
+        },
+        {
+            post_body: casual.sentence,
+            date_created: casual.date(format = 'YYYY-MM-DD')
+        },
+        {
+            post_body: casual.sentence,
+            date_created: casual.date(format = 'YYYY-MM-DD')
+        },
+        {
+            post_body: casual.sentence,
+            date_created: casual.date(format = 'YYYY-MM-DD')
+        }
+    ]
+
+
+// const randomCommentData = [
+//     {
+//         comment_body: casual.sentence,
+//         date_created: casual.date(format = 'YYYY-MM-DD')
+//     },
+//     {
+//         comment_body: casual.sentence,
+//         date_created: casual.date(format = 'YYYY-MM-DD')
+//     },
+//     {
+//         comment_body: casual.sentence,
+//         date_created: casual.date(format = 'YYYY-MM-DD')
+//     },
+//     {
+//         comment_body: casual.sentence,
+//         date_created: casual.date(format = 'YYYY-MM-DD')
+//     }
+// ]
+
 
 
 
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
+    try {
+        const users = await User.bulkCreate(randomUserData, {
+            individualHooks: true,
+            returning: true,
+        });
 
-    const users = await User.bulkCreate(randomUserData, {
-        individualHooks: true,
-        returning: true,
-    });
+        const games = await Game.bulkCreate(gameData, {
+            // individualHooks: true,
+            returning: true,
+        });
+
+        
+        for (const post of randomPostData) {
+            await Post.create({
+                ...post,
+                user_id: users[Math.floor(Math.random() * users.length)].id,
+                game_id: games[Math.floor(Math.random() * games.length)].id,
+
+            });
+          
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+
+        // for (const comment of commentData) {
+        //     await Comment.create({
+        //         ...comment,
+        //         user_id: users[Math.floor(Math.random() * users.length)].id,
+        //         post_id: post[Math.floor(Math.random() * post.length)].id,
+        //     });
+        // }
     
-    const games = await Game.bulkCreate(gameData, {
-        // individualHooks: true,
-        returning: true,
-    });
-
-
-
-    for (const post of randomPostData) {
-        await Post.create({
-            ...post,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
-            game_id: games[Math.floor(Math.random() * users.length)].id,  });
-            
+        // const comment = await Comment.bulkCreate(commentData, {
+        //     returning: true,
+        //     user_id: users[Math.floor(Math.random() * users.length)].id,
+        //     post_id: post[Math.floor(Math.random() * post.length)].id,
+        // })
     }
-    
+        //////////////////////////////////////////////////////////////////////////////////////////
+    }
+    catch (error) {
+        console.log(error)
+    }
     process.exit(0);
 };
 
