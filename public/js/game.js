@@ -101,3 +101,16 @@ const gameCards = (games) => {
 }
 
 
+const initListOfTasks = (data) => {
+    if (cardContainer) {
+        document.getElementById('card-container').replaceWith(cardContainer);
+        return;
+    }
+
+    cardContainer = document.querySelector('.post-container');
+    data.forEach((game) => {
+        gameCards(game);
+    });
+};
+
+
