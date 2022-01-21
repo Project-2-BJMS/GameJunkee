@@ -27,30 +27,29 @@
       {{post_body}}
     </p>
   </div>
-  <div class='add-comment-container mt-5'>
-    <h2>
-      Comments
-    </h2>
+  <div class='row add-comment-container mt-5'>
     <form class = 'form create-comment'>
-      <div class='form-group'>
+      <div class='form-group mb-1'>
       <label for='comment-input'>Comment:</label>
       <br/>
       <textarea type = 'text' class = 'form-input' id='comment-input' rows='5' cols='30'></textarea>
       </div> 
-      <br />
-      <div class = 'form-group'>
+      <div class = 'form-group mt-1'>
       <button type='submit'  id ='submit-button'>Comment</button>
      </div>
     </form>
   </div>
   <div class = 'row display-flex justify-center'>
+    
+    
     {{#if comments.length}}
     {{#each comments as |comment|}}
     <div class = 'col-md-8'>
-      <h4>{{comment.user.username}}</h4>
+      <h4 class = 'comment-username'>{{comment.user.username}}</h4>
       <div class = 'ind-user-comment'>
         <p>{{comment_body}}</p>
       </div>
+        <p class='comment-user-tag'>posted on {{format_date comment.date_created}}
     </div>
     {{/each}}
     {{/if}}
