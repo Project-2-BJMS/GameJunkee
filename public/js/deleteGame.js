@@ -7,6 +7,7 @@ const deleteGame = async (event) => {
             method: 'DELETE',
         });
 
+
         if (response.ok) {
             document.location.reload()
         } else {
@@ -22,3 +23,4 @@ const deleteGame = async (event) => {
 document
     .querySelector('#delete-game')
     .addEventListener('click', deleteGame)
+
