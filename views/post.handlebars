@@ -1,17 +1,33 @@
-<div class='post-container flex-column'>
-  <div class='dish col-md-5'>
-    <p>
-      {{user.username}} is playing:
-    </p>
-    <p>{{game.title}}</p>
-    <img class='post-image my-1' alt="game cover" src={{game.img_url}}>
+{{!-- should displayPost template also include a form for other users to create and append a comment to this page? --}}
+{{!-- are users able to edit their own posts? comments? --}}
+{{!-- TODO:
+1.
+--}}
+
+{{!-- <form class='form post-game'>
+  <div class='form-group'>
+    <label for='game-search'>Search a Game</label>
+    <input class='form-input' type='text' id='game-search'></input>
   </div>
-  <div class='col-md-7'>
-    <p>
+  <div class='form-group'>
+    <button type='submit' class='btn btn primary' id='submit-game'>Submit Post</button>
+  </div>
+</form> --}}
+
+<div class='row display-flex justify-center text-center'>
+  <div class='dish col-md-5 mb-5'>
+    <h4 class='user-playing'>{{user.username}} is playing:</h4>
+    <h6 class='playing-title'>{{game.title}}</h6>
+      <img class='post-image my-1' alt="game cover" src={{game.img_url}}>
+
+  </div>
+  <div class='col-md-7 ind-user-post mb-5'>
+      <h2 class='ind-review-user mb-5'>{{user.username}}'s Review</h2>
+    <p class='ind-review mt-5 '>
       {{post_body}}
     </p>
   </div>
-  <div class='add-comment-container'>
+  <div class='add-comment-container mt-5'>
     <h2>
       Comments
     </h2>

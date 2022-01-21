@@ -15,6 +15,7 @@ header, .project:not(:last-child) {
     background-attachment: fixed;
     background-position: center top;
   }
+  
 
   header .header-2-nav {
     display: flex;
@@ -28,7 +29,7 @@ header, .project:not(:last-child) {
 
   .fa-search {
     font-size: 300%;
-    padding: 5px;
+    padding: 10px;
     margin-top: 4px;
     margin-left: 25px;
     color:rgb(241, 181, 15);
@@ -49,17 +50,18 @@ header, .project:not(:last-child) {
     letter-spacing: 7px;
     font-style: italic;
     color: black;
-    background-color: rgb(241, 181, 15);
-    padding-left: 25px;
-    padding-right: 25px;
+    background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
     border: 10px solid rgb(0, 0, 0);
     border-radius: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+
   }
 
   .home-icon:hover {
     background-color: rgb(95, 72, 10);
-    color: rgb(241, 181, 15);
-    border: 10px solid rgb(241, 181, 15);
+    color: rgb(88, 65, 1);
+    border: 10px solid rgb(63, 46, 0);
   }
 
 
@@ -133,10 +135,10 @@ text-align: center;
 }
 
 .nav-btn {
-    background-color: rgb(0, 0, 0);
-    color: yellow;
-    border: solid 2px yellow;
-    border-radius: 5px;
+    color: black;
+    background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
     padding-left: 4px;
     padding-right: 4px;
     font-size: 80%;
@@ -144,15 +146,21 @@ text-align: center;
 }
 
 .game-image {
-height: 275px;
-width: 200px;
-border: solid 2px black;
+  height: 225px;
+  width: 165px;
+  border: solid 2px black;
 }
 
 .game-image:hover {
-height: 290px;
-width: 215px;
-cursor: pointer;
+  height: 230px;
+  width: 168px;
+  cursor: pointer;
+
+}
+
+.homepage-game-title {
+  font-size: 110%;
+  color: yellow;
 }
 
 .game-post {
@@ -172,6 +180,12 @@ box-shadow: 20px 20px 10px black;
 
 }
 
+.welcome-to-page {
+  letter-spacing: 1px;
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 300%;
+}
+
 .each-post {
 display: flex;
 flex-wrap: wrap;
@@ -180,19 +194,53 @@ margin-left: 50px;
 margin-right: -15px;
 }
 
+.ind-review-user {
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 300%;
+  color: black;
+  background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 20px;
+}
+
+.ind-review {
+  margin-top: 20px;
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 200%;
+  background-color: rgb(255, 250, 180);
+  color: #004777;
+  text-align: left;
+  padding: 10px;
+  text-indent: 15px;
+  border: solid 1px black;
+  border-radius: 5px;
+  height: 400px;
+}
+
 .user-posted {
-  color: gold;
-
-
+  color: rgb(160, 253, 233);
+  font-size: 150%;
 }
 
 .user-post {
-  color: aliceblue;
+  display: flex;
+  color: rgb(0, 0, 0);
+  height: 100px;
+  padding: 2px;
+  background-color: #a0a0a0;
+  font-size: 90%;
+  margin-left: 8px;
+  margin-left: 8px;
+  border: solid 1px rgb(0, 0, 0);
+  border-radius: 8px;
+  overflow-y: scroll;
+  
 
 }
 
 .user-tag {
 color: aliceblue;
+font-size: 80%;
 }
 
 .user-games {
@@ -278,9 +326,29 @@ font-weight: bolder;
 
 }
 
+.user-playing {
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 250%;
+  margin-bottom: 20px;
+}
+
+.playing-title {
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 150%;
+}
+
 .post-image {
-height: 475px;
-width: 330px;
+  height: 400px;
+  width: 290px;
+  border: solid 5px rgb(0, 0, 0);
+  border-radius: 50px;
+  margin-top: -10px;
+}
+
+.ind-user-post {
+  display: flex;
+  flex-direction: column;
+
 }
 
 .welcome-junk {
@@ -289,14 +357,18 @@ width: 330px;
 }
 
 .latest-junk {
-font-size: 400%;
-background-color: white;
-color:rgb(223, 2, 49);
-border-left: solid 3px rgb(223, 2, 49);
-border-bottom: solid 3px rgb(223, 2, 49);
-padding-left: 50px;
-padding-right: 50px;
-box-shadow: 5px 5px 5px rgb(94, 41, 41);
+  font-size: 400%;
+  font-family: 'Bebas Neue', cursive !important;
+  background-color: rgb(223, 2, 49);
+  letter-spacing: 7px;
+  color:rgb(226, 194, 88);
+  border: solid 3px rgb(226, 194, 88);
+  border-radius: 15px;
+  padding-left: 150px;
+  padding-right: 150px;
+  box-shadow: 5px 5px 5px rgb(94, 41, 41);
+
+
 }
 
 .login-user-title {
@@ -309,6 +381,7 @@ color:rgb(223, 2, 49);
 border: solid 3px rgb(223, 2, 49);
 border-radius: 10px;
 }
+
 .create-user-title {
 font-size: 300%;
 text-align: center;
@@ -340,6 +413,9 @@ background-color: rgb(3, 235, 3);
 .junkyard-game-btns {
   display: flex;
   justify-self: flex-end;
+  justify-content: space-around;
+  width: 200px;
+  padding-bottom: 10px;
 }
 
 .junkyard-library {
@@ -516,6 +592,11 @@ flex-direction: row;
   border: solid 4px rgb(182, 155, 0);
   border-radius: 15px;
   margin-bottom: 5px;
+}
+
+.make-post {
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 

@@ -1,6 +1,7 @@
 
 <div class='row m justify-space-around'>
-  <h1 class='latest-junk'>LATEST JUNK...</h1>
+  <h1 class='welcome-to-page mb-5'>Welcome to GameJunkee! Checkout our users' junk!</h1>
+  <h1 class='latest-junk mt-5'>LATEST JUNK</h1>
 </div>
 
 <div class='row mb-3 justify-space-around each-post'>
@@ -9,16 +10,16 @@
     <div class="row">
       <div class="game-post text-center">
         <a href="/post/{{post.id}}">
-          <h2 class='user-posted'>Posted by {{post.user.username}}</h2>
+          <h2 class='user-posted'>{{post.user.username}}</h2>
           <img class='game-image my-1' alt="game cover" src={{post.game.img_url}}>
         </a>
-        <h4>
-          <a href="/post/{{post.id}}">{{game.title}}
-        </h4>
+        <a href="/post/{{post.id}}">
+          <h4 class='homepage-game-title mb-3'>{{game.title}}</h4>
+        </a>
         <h6 class='user-post'>
           {{post.post_body}}
         </h6>
-        <p class='user-tag'>{{format_date post.date_created}}</p>
+        <p class='user-tag'>posted on {{format_date post.date_created}}</p>
       </div>
     </div>
   </div>
