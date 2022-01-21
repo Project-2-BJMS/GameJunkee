@@ -230,10 +230,12 @@ color: aliceblue;
 }
   
 .card-summary {
+  padding-top: 1rem;
   overflow-y: scroll;
+  height: 100px;
 }
 
 .card {
   padding-bottom: 1rem;
-  background: white;
+  background: #f8f8ff;
 }
