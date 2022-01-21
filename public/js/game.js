@@ -229,7 +229,10 @@ const gameCards = (games) => {
     gameTitle.innerText = games.name;
     gameTitle.className = games.name;
     image.src = `https://images.igdb.com/igdb/image/upload/t_720p/${games.cover.image_id}.jpg`;
-    image.className = `https://images.igdb.com/igdb/image/upload/t_cover_big/${games.cover.image_id}.jpg`;
+    image.className = `https://images.igdb.com/igdb/image/upload/t_720p/${games.cover.image_id}.jpg`;
+    image.id = 'image-responsive'
+
+
     let summary = document.createElement('p');
     summary.innerText = games.summary;
     summary.className = 'card-summary';
