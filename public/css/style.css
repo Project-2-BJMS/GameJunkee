@@ -233,6 +233,8 @@ color: aliceblue;
   padding-top: 1rem;
   overflow-y: scroll;
   height: 100px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .card {
