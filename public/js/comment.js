@@ -5,7 +5,8 @@ const createComment = async (event) => {
     event.preventDefault()
     const post_id = window.location.toString().split('/').at(-1)
     const comment_body = document.querySelector('#comment-input').value.trim()
-    // console.log(comment_body)
+    console.log(post_id);
+    console.log(comment_body);
     const response = await fetch('/api/comments/', {
             method: 'POST',
             body: JSON.stringify({comment_body, post_id}),
