@@ -1,6 +1,6 @@
+
 const router = require('express').Router();
-const { Game, Post, User, } = require('../models');
-// const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Game } = require('../models');
 const isAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -15,16 +15,17 @@ router.get('/', async (req, res) => {
                     model: Game,
                 },
             ],
+            order: [
+                ['date_created', 'DESC'],
+            ],
         });
-
-
-
 
         const posts = postData.map((post) => post.get({ plain: true }))
         // console.log(posts)
         res.render('homepage', {
             posts,
-            // logged_in: req.session.logged_in
+            logged_in: req.session.logged_in
+
         })
         console.log(posts)
     } catch (err) {
@@ -33,16 +34,19 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/menu', (req, res) => {
-    res.render('menu')
+    res.render('menu', {
+        logged_in: req.session.user_id
+
+    })
 })
 
-router.get('/gamesearch', (req, res) => {
+router.get('/gamesearch', isAuth, (req, res) => {
     // const gameData = await Game.findAll({})
     // const games = gameData.map((game) => game.get({ plain: true }))
     // console.log(games)
 
     res.render('gamesearch', {
-
+        logged_in: req.session.user_id
     })
 })
 
@@ -88,7 +92,7 @@ router.get('/profile', isAuth, async (req, res) => {
     }
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', isAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -99,13 +103,13 @@ router.get('/post/:id', async (req, res) => {
                 {
                     model: Game,
                 },
-                // {
-                //     model: Comment,
-                //     include: {
-                //         model: User,
-                //         attributes: ['username']
-                //     }
-                // }
+                {
+                    model: Comment,
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                }
             ],
         })
 
@@ -113,30 +117,30 @@ router.get('/post/:id', async (req, res) => {
 
         res.render('post', {
             ...post,
-            // logged_in: req.session.logged_in
+            logged_in: true,
         })
     } catch (err) {
         res.status(500).json(err);
     }
 })
 
-router.get('/profile', isAuth, async (req, res) => {
-    try {
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Game }],
-        });
+// router.get('/profile', isAuth, async (req, res) => {
+//     try {
+//         const userData = await User.findByPk(req.session.user_id, {
+//             attributes: { exclude: ['password'] },
+//             include: [{ model: Game }],
+//         });
 
-        const user = userData.get({ plain: true })
+//         const user = userData.get({ plain: true })
 
-        res.render('profile', {
-            ...user,
-            logged_in: true
-        })
-    } catch (err) {
-        res.status(500).json(err)
-    }
-})
+//         res.render('profile', {
+//             ...user,
+//             logged_in: true
+//         })
+//     } catch (err) {
+//         res.status(500).json(err)
+//     }
+// })
 
 router.get('/redirect/:id', isAuth, async (req, res) => {
     try {
@@ -160,6 +164,56 @@ router.get('/redirect/:id', isAuth, async (req, res) => {
     }
 })
 
+router.get('/junkyard', isAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [
+                { 
+                    model: Game,
+                    // where: {
+                    //     user_id: req.session.user_id
+                    // }
+                }
+            ],
+        });
+
+        const user = userData.get({ plain: true })
+
+        res.render('junkyard', {
+            ...user,
+            logged_in: req.session.user_id
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
+router.get('/profile-posts', isAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [
+                { 
+                    model: Post,
+                    include: [{
+                        model: Game,
+                    }]
+             }
+            ],
+        });
+
+        const user = userData.get({ plain: true })
+
+        res.render('userposts', {
+            ...user,
+            logged_in: true
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
 router.get('/login', async (req, res) => {
     try {
         if (req.session.logged_in) {
@@ -174,3 +228,17 @@ router.get('/login', async (req, res) => {
 })
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

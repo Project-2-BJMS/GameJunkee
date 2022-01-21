@@ -19,9 +19,7 @@ Game.init(
         img_url: {
             type: DataTypes.STRING,
             allowNull: false,
-            // validate: {
-            //     isUrl: true,
-            // },
+
             
         },
         user_id: {

@@ -1,45 +1,62 @@
-<div class='post-container flex-column'>
-  <div class='card-header col-md-10'>
-    <h2>GameJunkee</h2>
+{{!-- should displayPost template also include a form for other users to create and append a comment to this page? --}}
+{{!-- are users able to edit their own posts? comments? --}}
+{{!-- TODO:
+1.
+--}}
+
+{{!-- <form class='form post-game'>
+  <div class='form-group'>
+    <label for='game-search'>Search a Game</label>
+    <input class='form-input' type='text' id='game-search'></input>
   </div>
-  <div class='dish col-md-5'>
-    <p>
-      {{user.username}} is playing:
-    </p>
-    <p>{{game.title}}</p>
-    <img class='post-image my-1' alt="game cover" src={{game.img_url}}>
+  <div class='form-group'>
+    <button type='submit' class='btn btn primary' id='submit-game'>Submit Post</button>
   </div>
-  <div class='col-md-7'>
-    <p>
+</form> --}}
+
+<div class='row display-flex justify-center text-center'>
+  <div class='dish col-md-5 mb-5'>
+    <h4 class='user-playing'>{{user.username}} is playing:</h4>
+    <h6 class='playing-title'>{{game.title}}</h6>
+      <img class='post-image my-1' alt="game cover" src={{game.img_url}}>
+
+  </div>
+  <div class='col-md-7 ind-user-post mb-5'>
+      <h2 class='ind-review-user mb-5'>{{user.username}}'s Review</h2>
+    <p class='ind-review mt-5 '>
       {{post_body}}
     </p>
   </div>
-  <div class='add-comment-container'>
+  <div class='add-comment-container mt-5'>
     <h2>
       Comments
     </h2>
-    <form class='new-comment-form'>
-      <label for='user_name'>
-        Username:
-      </label>
+    <form class = 'form create-comment'>
+      <div class='form-group'>
+      <label for='comment-input'>Comment:</label>
+      <br/>
+      <textarea type = 'text' class = 'form-input' id='comment-input' rows='5' cols='30'></textarea>
+      </div> 
       <br />
-      <textarea id='user_name' name='user_name' placeholder='Username' rows='2' cols='30'>
-        {{user_name}}
-      </textarea>
-      <br />
-      <label for='comment'>
-        Comment:
-      </label>
-      <br />
-      <textarea id='comment' name='comment' placeholder='Write your comments here.' rows='5' cols='30'>
-        {{comment}}
-      </textarea>
-      <br />
-      <button type='submit' value='Submit'>
-        Comment
-      </button>
+      <div class = 'form-group'>
+      <button type='submit'  id ='submit-button'>Comment</button>
+     </div>
     </form>
   </div>
-</div>
+  <div class = 'row display-flex justify-center'>
+    {{#if comments.length}}
+    {{#each comments as |comment|}}
+    <div class = 'col-md-8'>
+      <h4>{{comment.user.username}}</h4>
+      <div class = 'ind-user-comment'>
+        <p>{{comment_body}}</p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
 
-<script src='../public/js/TODO'></script>
+
+</div>
+<script src = '../js/comment.js'></script>
+
