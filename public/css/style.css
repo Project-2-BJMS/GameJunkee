@@ -230,7 +230,7 @@ color: aliceblue;
 }
   
 .card-summary {
-  padding-top: 1rem;
+  padding: 1rem;
   overflow-y: scroll;
   height: 100px;
   text-align: justify;
@@ -240,4 +240,10 @@ color: aliceblue;
 .card {
   padding-bottom: 1rem;
   background: #f8f8ff;
+}
+
+#image-responsive {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
 }
