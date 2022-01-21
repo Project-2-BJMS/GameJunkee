@@ -1,4 +1,3 @@
-{{!-- 
 
 <div class='row m justify-space-around'>
   <h1 class='latest-junk'>LATEST JUNK...</h1>
@@ -6,7 +5,6 @@
 
 <div class='row mb-3 justify-space-around each-post'>
   {{#each posts as |post| }}
-
   <div class="col-md-5 my-5 post-card">
     <div class="row">
       <div class="game-post text-center">
@@ -24,45 +22,13 @@
       </div>
     </div>
   </div>
-
-
-  {{/each}}
-</div> --}}
-
-
-
-{{!-- <script src='/js/game.js'></script> --}}
-
-<div class='row m justify-space-around'>
-  <h1 class='latest-junk'>LATEST JUNK...</h1>
-</div>
-
-<div class='row mb-3 justify-space-around each-post'>
-  {{#each posts as |post| }}
-
-  <div class="col-md-5 my-5 post-card">
-    <div class="row">
-      <div class="game-post text-center">
-        <a href="/post/{{post.id}}">
-          <h2 class='user-posted'>Posted by {{post.user.username}}</h2>
-          <img class='game-image my-1' alt="game cover" src={{post.game.img_url}}>
-        </a>
-        <h4>
-          <a href="/post/{{post.id}}">{{game.title}}
-        </h4>
-        <h6 class='user-post'>
-          {{post.post_body}}
-        </h6>
-        <p class='user-tag'>{{format_date post.date_created}}</p>
-      </div>
-    </div>
-  </div>
-
-
   {{/each}}
 </div>
 
 
 
-{{!--
-<script src='/js/game.js'></script> --}}
+
+
+
+ <script src='/js/game.js'></script> 
+
