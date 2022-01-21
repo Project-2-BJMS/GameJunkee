@@ -229,5 +229,11 @@ color: aliceblue;
   align-items: center;
 }
   
-  
-  
+.card-summary {
+  overflow-y: scroll;
+}
+
+.card {
+  padding-bottom: 1rem;
+  background: white;
+}
