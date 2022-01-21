@@ -19,7 +19,8 @@ html {
  */
 body {
   margin: 0;
-  background-color: rgb(206, 154, 10);
+  background: linear-gradient(0.25turn, rgb(155, 114, 0), rgb(240, 182, 24), rgb(155, 114, 0));
+  /* background-color: rgb(206, 154, 10); */
 }
 
 /**

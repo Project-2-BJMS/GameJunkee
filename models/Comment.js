@@ -77,8 +77,6 @@ Comment.init(
                 key: 'id',
             },
         },
-
-        
         comment_body: {
             type: DataTypes.STRING,
             allowNull: false,
