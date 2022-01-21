@@ -3,67 +3,8 @@
 }
 
 header, .project:not(:last-child) {
-    border-bottom: 3px solid rgb(255, 247, 202);
-  }
-  
-  header {
-    background-color: #56b6f7;
-    color: rgb(0, 0, 0);
-    font-size: 150%;
-    height: 150px;
-    background-image: url("../images/game-controller.jpg");
-    background-attachment: fixed;
-    background-position: center top;
-  }
-  
-
-  header .header-2-nav {
-    display: flex;
-    align-self: flex-end;
-  }
-
-  .header-one {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .fa-search {
-    font-size: 300%;
-    padding: 10px;
-    margin-top: 4px;
-    margin-left: 25px;
-    color:rgb(241, 181, 15);
-    background-color: black;
-    border: 3px solid rgb(241, 181, 15);
-    border-radius: 10px;
-  }
-
-  .fa-search:hover {
-    font-size: 325%;
-    margin-left: 22px;
-    margin-top: 2px;
-  }
-
-  .home-icon {
-    margin-left: 30px;
-    font-size: 200%;
-    letter-spacing: 7px;
-    font-style: italic;
-    color: black;
-    background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
-    border: 10px solid rgb(0, 0, 0);
-    border-radius: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
-
-  }
-
-  .home-icon:hover {
-    background-color: rgb(95, 72, 10);
-    color: rgb(88, 65, 1);
-    border: 10px solid rgb(63, 46, 0);
-  }
-
+  border-bottom: 3px solid rgb(255, 247, 202);
+}
 
 header {
   background-color: #56b6f7;
@@ -75,9 +16,11 @@ header {
   background-position: center top;
 }
 
-/* header .header-2-nav {
-  align-items: flex-end;
-} */
+
+header .header-2-nav {
+  display: flex;
+  align-self: flex-end;
+}
 
 .header-one {
   display: flex;
@@ -86,7 +29,7 @@ header {
 
 .fa-search {
   font-size: 300%;
-  padding: 5px;
+  padding: 10px;
   margin-top: 4px;
   margin-left: 25px;
   color:rgb(241, 181, 15);
@@ -107,21 +50,18 @@ header {
   letter-spacing: 7px;
   font-style: italic;
   color: black;
-  background-color: rgb(241, 181, 15);
-  padding-left: 25px;
-  padding-right: 25px;
+  background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
   border: 10px solid rgb(0, 0, 0);
   border-radius: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+
 }
 
 .home-icon:hover {
   background-color: rgb(95, 72, 10);
-  color: rgb(241, 181, 15);
-  border: 10px solid rgb(241, 181, 15);
-
-
-
-
+  color: rgb(88, 65, 1);
+  border: 10px solid rgb(63, 46, 0);
 }
 
 main {
@@ -135,32 +75,30 @@ text-align: center;
 }
 
 .nav-btn {
-    color: black;
-    background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 20px;
-    padding-left: 4px;
-    padding-right: 4px;
-    font-size: 80%;
-
+  color: black;
+  background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 80%;
 }
 
 .game-image {
-  height: 225px;
-  width: 165px;
-  border: solid 2px black;
+height: 225px;
+width: 165px;
+border: solid 2px black;
 }
 
 .game-image:hover {
-  height: 230px;
-  width: 168px;
-  cursor: pointer;
-
+height: 230px;
+width: 168px;
+cursor: pointer;
 }
 
 .homepage-game-title {
-  font-size: 110%;
-  color: yellow;
+font-size: 110%;
+color: yellow;
 }
 
 .game-post {
@@ -174,16 +112,16 @@ box-shadow: 20px 20px 10px black;
 }
 
 .welcome {
-  /* font-style: italic; */
-  font-size: 300%;
-  font-family: 'Bebas Neue', cursive !important;
+/* font-style: italic; */
+font-size: 300%;
+font-family: 'Bebas Neue', cursive !important;
 
 }
 
 .welcome-to-page {
-  letter-spacing: 1px;
-  font-family: 'Bebas Neue', cursive !important;
-  font-size: 300%;
+letter-spacing: 1px;
+font-family: 'Bebas Neue', cursive !important;
+font-size: 300%;
 }
 
 .each-post {
@@ -195,46 +133,45 @@ margin-right: -15px;
 }
 
 .ind-review-user {
-  font-family: 'Bebas Neue', cursive !important;
-  font-size: 300%;
-  color: black;
-  background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
-  border: 3px solid rgb(0, 0, 0);
-  border-radius: 20px;
+font-family: 'Bebas Neue', cursive !important;
+font-size: 300%;
+color: black;
+background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
+border: 3px solid rgb(0, 0, 0);
+border-radius: 20px;
 }
 
 .ind-review {
-  margin-top: 20px;
-  font-family: 'Bebas Neue', cursive !important;
-  font-size: 200%;
-  background-color: rgb(255, 250, 180);
-  color: #004777;
-  text-align: left;
-  padding: 10px;
-  text-indent: 15px;
-  border: solid 1px black;
-  border-radius: 5px;
-  height: 400px;
+margin-top: 20px;
+font-family: 'Bebas Neue', cursive !important;
+font-size: 200%;
+background-color: rgb(255, 250, 180);
+color: #004777;
+text-align: left;
+padding: 10px;
+text-indent: 15px;
+border: solid 1px black;
+border-radius: 5px;
+height: 400px;
 }
 
 .user-posted {
-  color: rgb(160, 253, 233);
-  font-size: 150%;
+color: rgb(160, 253, 233);
+font-size: 150%;
 }
 
 .user-post {
-  display: flex;
-  color: rgb(0, 0, 0);
-  height: 100px;
-  padding: 2px;
-  background-color: #a0a0a0;
-  font-size: 90%;
-  margin-left: 8px;
-  margin-left: 8px;
-  border: solid 1px rgb(0, 0, 0);
-  border-radius: 8px;
-  overflow-y: scroll;
-  
+display: flex;
+color: rgb(0, 0, 0);
+height: 100px;
+padding: 2px;
+background-color: #a0a0a0;
+font-size: 90%;
+margin-left: 8px;
+margin-left: 8px;
+border: solid 1px rgb(0, 0, 0);
+border-radius: 8px;
+overflow-y: scroll;
 
 }
 
@@ -244,28 +181,27 @@ font-size: 80%;
 }
 
 .user-games {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: rgb(66, 66, 66);
-  padding: 15px;
-  opacity: 95%;
-  border: solid 5px white;
-  border-radius: 15px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+background-color: rgb(66, 66, 66);
+padding: 15px;
+opacity: 95%;
+border: solid 5px white;
+border-radius: 15px;
 }
 .user-posts {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: rgb(27, 85, 211);
-  padding: 15px;
-  opacity: 95%;
-  border: solid 5px white;
-  border-radius: 15px;
-
-
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+background-color: rgb(27, 85, 211);
+padding: 15px;
+opacity: 95%;
+border: solid 5px white;
+border-radius: 15px;
+}
 
 .menu-btn {
 width: 500px;
@@ -327,48 +263,45 @@ font-weight: bolder;
 }
 
 .user-playing {
-  font-family: 'Bebas Neue', cursive !important;
-  font-size: 250%;
-  margin-bottom: 20px;
+font-family: 'Bebas Neue', cursive !important;
+font-size: 250%;
+margin-bottom: 20px;
 }
 
 .playing-title {
-  font-family: 'Bebas Neue', cursive !important;
-  font-size: 150%;
+font-family: 'Bebas Neue', cursive !important;
+font-size: 150%;
 }
 
 .post-image {
-  height: 400px;
-  width: 290px;
-  border: solid 5px rgb(0, 0, 0);
-  border-radius: 50px;
-  margin-top: -10px;
+height: 400px;
+width: 290px;
+border: solid 5px rgb(0, 0, 0);
+border-radius: 50px;
+margin-top: -10px;
 }
 
 .ind-user-post {
-  display: flex;
-  flex-direction: column;
-
+display: flex;
+flex-direction: column;
 }
 
 .welcome-junk {
-  font-family: 'Bebas Neue', cursive !important;
-  font-size: 400%;
+font-family: 'Bebas Neue', cursive !important;
+font-size: 400%;
 }
 
 .latest-junk {
-  font-size: 400%;
-  font-family: 'Bebas Neue', cursive !important;
-  background-color: rgb(223, 2, 49);
-  letter-spacing: 7px;
-  color:rgb(226, 194, 88);
-  border: solid 3px rgb(226, 194, 88);
-  border-radius: 15px;
-  padding-left: 150px;
-  padding-right: 150px;
-  box-shadow: 5px 5px 5px rgb(94, 41, 41);
-
-
+font-size: 400%;
+font-family: 'Bebas Neue', cursive !important;
+background-color: rgb(223, 2, 49);
+letter-spacing: 7px;
+color:rgb(226, 194, 88);
+border: solid 3px rgb(226, 194, 88);
+border-radius: 15px;
+padding-left: 150px;
+padding-right: 150px;
+box-shadow: 5px 5px 5px rgb(94, 41, 41);
 }
 
 .login-user-title {
@@ -398,24 +331,34 @@ background-color: rgb(3, 235, 3);
 }
 
 .junkyard-game {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: rgb(92, 0, 0);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: solid 2px black;
-  border-radius: 5px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+background-color: rgb(92, 0, 0);
+padding-top: 5px;
+padding-bottom: 5px;
+border: solid 2px black;
+border-radius: 5px;
 }
 
 .junkyard-game-btns {
-  display: flex;
-  justify-self: flex-end;
-  justify-content: space-around;
-  width: 200px;
-  padding-bottom: 10px;
+display: flex;
+justify-self: flex-end;
+justify-content: space-around;
+width: 200px;
+padding-bottom: 10px;
+}
+
+.post-user-game {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+background-color: rgb(65, 0, 0);
+padding-top: 5px;
+padding-bottom: 5px;
 }
 
 .junkyard-library {
@@ -501,108 +444,12 @@ border-radius: 15px;
 margin-bottom: 5px;
 }
 
-.post-user-game {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: rgb(65, 0, 0);
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.junkyard-library {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: grey;
-  height: 7em;
-  line-height: 6em;
-  text-align: center;
-  background-image: url(../images/junkyard.jpg);
-  background-size: 500px;
-  border: solid 5px black;
-  border-radius: 10px;
-  color: rgb(255, 210, 86);
-  width: 95%;
-  height: 300px;
-  opacity: 75%
-}
-
-.post-library {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 7em;
-  line-height: 6em;
-  text-align: center;
-  background-image: url(../images/posts.jpg);
-  background-size: 500px;
-  border: solid 5px rgb(0, 0, 160);
-  border-radius: 10px;
-  color: rgb(255, 210, 86);
-  width: 95%;
-  height: 300px;
-  opacity: 75%
-}
-
-.library-txt {
-  background-color: black;
-  padding: 5px;
-  opacity: 75%;
-  border: solid 2px white
-}
-
-.junkyard-library:hover {
-  opacity:100%;
-  width: 95.5%;
-  height: 302px;
-}
-.post-library:hover {
-  opacity:100%;
-  width: 95.5%;
-  height: 302px;
-}
-
-/* .junk-bg {
-  background-image: url('../images/junkyard.jpg');
-  height: 100%;
-  width: 100%;
-  background-size: 1800px;
-  opacity: 75%;
-} */
-
-.game-div {
-display:flex;
-flex-direction: row;
-
-}
-
-.sing-game-title {
-  font-style: italic;
-  color: black;
-  background-color: rgb(241, 181, 15);
-  padding-left: 25px;
-  padding-right: 25px;
-  border: 10px solid rgb(0, 0, 0);
-  border-radius: 20px;
-}
-
-.junkyard-game-image {
-  border: solid 4px rgb(182, 155, 0);
-  border-radius: 15px;
-  margin-bottom: 5px;
-}
-
 .make-post {
-  margin-left: 1px;
-  margin-right: 1px;
+margin-left: 1px;
+margin-right: 1px;
 }
 
 
-  
 
 
 
-  
-  
