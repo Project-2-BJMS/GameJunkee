@@ -445,4 +445,27 @@ margin-right: 1px;
 
 
 
+.ind-user-comment {
+  background-color:rgb(255, 250, 180);
+  border: solid 1px black;
+  border-radius: 5px;
+  text-align: left;
+  padding: 5px;
+  overflow-y: scroll;
+  height: 70px;
+}
+
+
+.comment-username {
+  text-align: left;
+  color: #004777;
+}
+
+.comment-user-tag {
+    color: aliceblue;
+    font-size: 80%;
+    text-align: left;
+}
+
+
 
