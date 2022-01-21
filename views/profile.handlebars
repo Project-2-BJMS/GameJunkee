@@ -1,25 +1,13 @@
-{{!-- TODO:
-1. div for the profile header
-2. div to list posts by game title
-3. add "New Post" button
---}}
-
 <div class="row">
     <div class="col-auto">
         <h2>Welcome, {{username}}!</h2>
     </div>
 </div>
-
 <div class='row justify-space-around new-post-card'>
-
-
-
-
     <div class='col-md-6 user-posts'>
         <h3 class='mb-5'>{{username}}'s Junkyard:</h3>
         {{#if games.length}}
         <div class='row mb-2 justify-space-between'>
-
             {{#each games as |game|}}
             <div class='col md-4 junkyard-game'>
                 <h2>{{game.title}}</h2>
@@ -30,12 +18,10 @@
                     <a class="btn btn-sm btn-secondary edit-post" href='/edit-post/{{post.id}}'>EDIT</a>
                 </div>
             </div>
-
         </div>
         {{/each}}
         {{/if}}
     </div>
 </div>
-
 
 <script src='/js/profile.js'></script>
