@@ -238,6 +238,7 @@ const gameCards = (games) => {
     btn.type = "submit";
     btn.id = "submit-game";
     btn.classList.add('btn', 'success');
+
     cardBody.appendChild(gameTitle);
     cardBody.appendChild(image);
     cardBody.appendChild(summary);
@@ -295,4 +296,12 @@ const handlePostGame = async (event) => {
         alert(response.statusText)
     }
 }
+
+
+
+
+
+
 formPostGame.addEventListener('submit', handlePostGame)
+
+
