@@ -1,7 +1,7 @@
 {{!-- <div class='junk-bg'> --}}
     <div class="row mb-5">
         <div class="col-auto mt-5">
-            <h2 class='welcome-junk'>Welcome to the Junkyard, {{username}}!</h2>
+            <h2 class='welcome-junk'>Welcome to your Junkyard, {{username}}!</h2>
         </div>
     </div>
 
@@ -14,7 +14,7 @@
                 <img class='junkyard-game-image' src='{{game.img_url}}'>
                 <div class='junkyard-game-btns'>
                     <a class="btn btn-sm btn-success make-post" href='/redirect/{{game.id}}'>SHARE</a>
-                    <button class="btn btn-sm btn-danger delete-game" data-id='{{game.id}}'>DELETE</button>
+                    <button class="btn btn-sm btn-danger delete-game" id='delete-game' type='button' data-id='{{game.id}}'>DELETE</button>
                 </div>
             </div>
             {{!--

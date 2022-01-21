@@ -25,13 +25,13 @@
 <div class='col-md-12 user-posts'>
     {{#if posts.length}}
     {{#each posts as |post| }}
-    <div class='col-md-3 px-2 junkyard-game'>
+    <div class='col-md-3 px-2 user-post-game'>
         <div class="game-post text-center">
             <a href="/post/{{post.id}}">
                 <h4>
                  {{post.game.title}}
                 </h4>
-                <img class='junkyard-game-image' src='{{post.game.img_url}}'>
+                <img class='user-post-game-image' src='{{post.game.img_url}}'>
             </a>
             <h4>
                 <a href="/post/{{post.id}}">{{post.game.title}}</a>
@@ -47,6 +47,8 @@
     </div>
 
     {{/each}}
+    {{else}}
+        <h3>You haven't posted yet!</h3>
     {{/if}}
 </div>
 

@@ -15,13 +15,16 @@ router.get('/', async (req, res) => {
                     model: Game,
                 },
             ],
+            order: [
+                ['date_created', 'DESC'],
+            ],
         });
 
         const posts = postData.map((post) => post.get({ plain: true }))
         // console.log(posts)
         res.render('homepage', {
             posts,
-            logged_in: true,
+            logged_in: req.session.logged_in
         })
         console.log(posts)
     } catch (err) {
@@ -31,17 +34,17 @@ router.get('/', async (req, res) => {
 
 router.get('/menu', (req, res) => {
     res.render('menu', {
-        logged_in: true
+        logged_in: req.session.user_id
     })
 })
 
-router.get('/gamesearch', (req, res) => {
+router.get('/gamesearch', isAuth, (req, res) => {
     // const gameData = await Game.findAll({})
     // const games = gameData.map((game) => game.get({ plain: true }))
     // console.log(games)
 
     res.render('gamesearch', {
-
+        logged_in: req.session.user_id
     })
 })
 
@@ -87,7 +90,7 @@ router.get('/profile', isAuth, async (req, res) => {
     }
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', isAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -163,14 +166,21 @@ router.get('/junkyard', isAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Game }],
+            include: [
+                { 
+                    model: Game,
+                    // where: {
+                    //     user_id: req.session.user_id
+                    // }
+                }
+            ],
         });
 
         const user = userData.get({ plain: true })
 
         res.render('junkyard', {
             ...user,
-            logged_in: true
+            logged_in: req.session.user_id
         })
     } catch (err) {
         res.status(500).json(err)

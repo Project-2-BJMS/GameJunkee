@@ -90,6 +90,7 @@ const seedDatabase = async () => {
             returning: true,
         });
 
+        
         const games = await Game.bulkCreate(gameData, {
             // individualHooks: true,
             returning: true,

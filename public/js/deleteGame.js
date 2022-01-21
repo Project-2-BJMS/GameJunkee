@@ -20,5 +20,5 @@ const deleteGame = async (event) => {
 // const deleteBtn = document.querySelector('.delete-game')
 // deleteBtn.addEventListener('click', deleteGame)
 document
-    .querySelector('.delete-game')
+    .querySelector('#delete-game')
     .addEventListener('click', deleteGame)

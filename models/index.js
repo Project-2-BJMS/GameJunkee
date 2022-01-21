@@ -16,15 +16,16 @@ User.hasMany(Post, {
 Game.belongsTo(User, {
   foreignKey: 'user_id',
 })
-
 User.hasMany(Game, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
   })
 
 
+
 Post.belongsTo(Game, {
   foreignKey: 'game_id',
+  onDelete: 'CASCADE'
 })
 
 Game.hasMany(Post, {
