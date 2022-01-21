@@ -254,6 +254,7 @@ font-size: 80%;
   border: solid 5px white;
   border-radius: 15px;
 }
+
 .user-posts {
   display: flex;
   flex-direction: row;
@@ -264,7 +265,7 @@ font-size: 80%;
   opacity: 95%;
   border: solid 5px white;
   border-radius: 15px;
-
+}
 
 
 .menu-btn {
