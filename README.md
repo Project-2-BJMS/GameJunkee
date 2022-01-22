@@ -19,7 +19,7 @@ The application uses frontend and backend web development tools to give videogam
 
 # Heroku Deployment:
 
-https://thawing-mesa-38322.herokuapp.com/
+https://gamejunkee.herokuapp.com/
 
 # Usage:
 
@@ -56,9 +56,11 @@ HTML, CSS, JavaScript, Express.js, Node.js, MySQL, Whimsical
 
 # Wireframe
 
+![Screen Capture 025 - GameJunkee - whimsical com](https://user-images.githubusercontent.com/90992593/150620918-7d955f11-8a67-414d-bddb-b694051952f0.jpg)
 
 # Entity Relationship Diagram
 
+![Screen Capture 024 - GameJunkee - whimsical com](https://user-images.githubusercontent.com/90992593/150620796-6a9f726c-8460-4ded-86bc-1602ab0fe25d.jpg)
 
 # Questions:
 
