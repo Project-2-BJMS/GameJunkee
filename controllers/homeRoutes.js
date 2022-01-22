@@ -164,9 +164,9 @@ router.get('/junkyard', isAuth, async (req, res) => {
             include: [
                 { 
                     model: Game,
-                    // where: {
-                    //     user_id: req.session.user_id
-                    // }
+                    where: {
+                        user_id: req.session.user_id
+                    }
                 }
             ],
         });
