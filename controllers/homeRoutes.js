@@ -148,7 +148,7 @@ router.get('/createpost/:id', isAuth, async (req, res) => {
 
         const game = gameData.get({ plain: true })
 
-        res.render('createpost', {
+        res.render('makepost', {
             ...game,
             logged_in: true
         })
