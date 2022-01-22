@@ -9,15 +9,15 @@
     <div class='col-md-12 user-games'>
         {{#if games.length}}
         {{!-- <div class='row mb-2 px-4 game-div'> --}}
+            {{#each games as |game|}}
+            <div class='col-md-4 px-2 junkyard-game'>
+                <h2 class='sing-game-title'>{{game.title}}</h2>
+                <img class='junkyard-game-image' src='{{game.img_url}}'>
+                <div class='junkyard-game-btns'>
+                    <a class="btn btn-sm btn-success make-post" href='/createpost/{{game.id}}'>SHARE</a>
+                    <button class="btn btn-sm btn-danger delete-game" id='delete-game' type='button' data-id='{{game.id}}'>DELETE</button>
 
-    {{#each games as |game|}}
-    <div class='col-md-4 px-2 junkyard-game'>
-        <h2 class='sing-game-title'>{{game.title}}</h2>
-        <img class='junkyard-game-image' src='{{game.img_url}}'>
-        <div class='junkyard-game-btns'>
-            <a class="btn btn-sm btn-success make-post" href='/redirect/{{game.id}}'>SHARE</a>
-            <button class="btn btn-sm btn-danger delete-game" id='delete-game' type='button'
-                data-id='{{game.id}}'>DELETE</button>
+
 
         </div>
     </div>

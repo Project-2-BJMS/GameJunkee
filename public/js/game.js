@@ -214,11 +214,7 @@ const postGame = (game) => {
         body: `fields id, name, cover.image_id, summary; search "${game}"; where version_parent = null; limit 1;`,
     })
 }
-// Image link for covers or screenshots
-// We can determine the size of the image once we start the front end
-// images.igdb.com/igdb/image/upload/t_${size}/{${cover.image_id}.jpg
-// images.igdb.com/igdb/image/upload/t_1080p/{${cover.image_id}.jpg
-// Create cards for each game on the page
+
 let image = document.createElement('img');
 let gameTitle = document.createElement('h4');
 const gameCards = (games) => {
