@@ -142,7 +142,7 @@ router.get('/post/:id', isAuth, async (req, res) => {
 //     }
 // })
 
-router.get('/redirect/:id', isAuth, async (req, res) => {
+router.get('/createpost/:id', isAuth, async (req, res) => {
     try {
         const gameData = await Game.findByPk(req.params.id);
 
