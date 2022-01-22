@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
 
-class Game extends Model {}
+class Game extends Model { }
 
 Game.init(
     {
@@ -20,7 +20,7 @@ Game.init(
             type: DataTypes.STRING,
             allowNull: false,
 
-            
+
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -28,7 +28,7 @@ Game.init(
                 model: 'user',
                 key: 'id',
             },
-        },        
+        },
     },
     {
         sequelize,
