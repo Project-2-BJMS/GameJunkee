@@ -50,7 +50,7 @@ header .header-2-nav {
   letter-spacing: 7px;
   font-style: italic;
   color: black;
-  background: linear-gradient(rgb(185, 136, 0), rgb(255, 202, 57), rgb(185, 136, 0));
+  background: linear-gradient(rgb(197, 145, 0), rgb(255, 202, 57), rgb(197, 145, 0));
   border: 10px solid rgb(0, 0, 0);
   border-radius: 20px;
   padding-left: 25px;
@@ -122,12 +122,18 @@ font-family: 'Bebas Neue', cursive !important;
 .welcome-to-page {
 letter-spacing: 1px;
 font-family: 'Bebas Neue', cursive !important;
-font-size: 350%;
+font-size: 500%;
 background: linear-gradient(0.25turn, rgb(167, 122, 0), yellow, rgb(167, 122, 0));
 text-align: center;
 border-top: solid 2px black;
 border-bottom: solid 5px black;
 letter-spacing: 1px;
+}
+
+.please-check {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
 }
 
 .each-post {
@@ -320,17 +326,20 @@ border-radius: 15px;
 }
 
 .latest-junk {
-font-size: 400%;
+font-size: 300%;
 font-family: 'Bebas Neue', cursive !important;
-background-color: rgb(223, 2, 49);
+background: linear-gradient(0.25turn, rgb(204, 150, 0), rgb(223, 2, 49), rgb(204, 150, 0));
+/* background-color: rgb(223, 2, 49); */
 letter-spacing: 7px;
 color:rgb(226, 194, 88);
-border: solid 3px rgb(226, 194, 88);
-border-radius: 15px;
+border-top: solid 3px rgb(226, 194, 88);
+border-bottom: solid 3px rgb(226, 194, 88);
+border-radius: 3px;
 padding-left: 150px;
 padding-right: 150px;
+margin-top: 1em;
 margin-right: 30px;
-box-shadow: 5px 5px 5px rgb(94, 41, 41);
+box-shadow: 5px 5px 5px -15px rgb(94, 41, 41);
 }
 
 .login-user-title {
