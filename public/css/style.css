@@ -305,6 +305,12 @@ font-family: 'Bebas Neue', cursive !important;
 font-size: 150%;
 }
 
+.posted-game-title {
+  font-size: 150%;
+  font-family: 'Bebas Neue', cursive !important;
+  color: yellow;
+}
+
 .post-image {
 height: 400px;
 width: 290px;
