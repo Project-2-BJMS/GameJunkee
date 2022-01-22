@@ -142,20 +142,13 @@ router.get('/post/:id', isAuth, async (req, res) => {
 //     }
 // })
 
-router.get('/redirect/:id', isAuth, async (req, res) => {
+router.get('/createpost/:id', isAuth, async (req, res) => {
     try {
-        const gameData = await Game.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ],
-        });
+        const gameData = await Game.findByPk(req.params.id);
 
         const game = gameData.get({ plain: true })
 
-        res.render('createpost', {
+        res.render('makepost', {
             ...game,
             logged_in: true
         })
