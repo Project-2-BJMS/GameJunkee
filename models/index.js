@@ -32,11 +32,9 @@ Game.hasMany(Post, {
   onDelete: 'CASCADE'
 })
 
-
 Comment.belongsTo(User, {
   foreignKey: 'user_id',
 })
-
 
 User.hasMany(Comment, {
   foreignKey: 'user_id',
