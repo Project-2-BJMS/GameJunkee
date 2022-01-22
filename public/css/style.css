@@ -155,7 +155,7 @@ margin-right: -15px;
 .delete-game-btn {
   display: flex;
   justify-content: center;
-  /* margin-left: 40px; */
+  margin-left: 55px;
 }
 
 .user-post-game-image {
@@ -518,7 +518,7 @@ border-radius: 15px;
 
 .junkyard-game-image {
 border: solid 4px rgb(182, 155, 0);
-width: 300px;
+width: 250px;
 border-radius: 15px;
 margin-bottom: 5px;
 }
