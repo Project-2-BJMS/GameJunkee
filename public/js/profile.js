@@ -15,7 +15,7 @@ const createPost = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/')
+            document.location.replace('/profile-posts')
         } else {
             alert(response.statusText)
         }
@@ -23,22 +23,22 @@ const createPost = async (event) => {
     }
 // }
 
-const deletePost = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id')
-        console.log(id)
+// const deletePost = async (event) => {
+//     if (event.target.hasAttribute('data-id')) {
+//         const id = event.target.getAttribute('data-id')
+//         console.log(id)
 
-        const response = await fetch(`/api/posts/${id}`, {
-            method: 'DELETE',
-        });
+//         const response = await fetch(`/api/posts/${id}`, {
+//             method: 'DELETE',
+//         });
 
-        if (response.ok) {
-            document.location.replace('/profile')
-        } else {
-            alert(response.statusText)
-        }
-    }
-};
+//         if (response.ok) {
+//             document.location.reload()
+//         } else {
+//             alert(response.statusText)
+//         }
+//     }
+// };
 
 
 
@@ -46,11 +46,10 @@ const deletePost = async (event) => {
 document
     .querySelector('.create-post')
     .addEventListener('submit', createPost)
-// const postCreate = document.querySelector('.create-post')
-// postCreate.addEventListener('submit', createPost)
 
-document
-    .querySelector('.delete-post')
-    .addEventListener('click', deletePost)
+
+// document
+//     .querySelector('.delete-post')
+//     .addEventListener('click', deletePost)
 
 
