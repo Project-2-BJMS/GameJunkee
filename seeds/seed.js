@@ -1,11 +1,7 @@
-
-
-
 const sequelize = require('../config/connection');
 const { User, Post, Game, Comment } = require('../models');
 
-// const userData = require('./userData.json');
-// const postData = require('./postData.json');
+
 const gameData = require('./gameData.json');
 const commentData = require('./commentData.json')
 
@@ -59,27 +55,6 @@ const randomPostData =
     ]
 
 
-// const randomCommentData = [
-//     {
-//         comment_body: casual.sentence,
-//         date_created: casual.date(format = 'YYYY-MM-DD')
-//     },
-//     {
-//         comment_body: casual.sentence,
-//         date_created: casual.date(format = 'YYYY-MM-DD')
-//     },
-//     {
-//         comment_body: casual.sentence,
-//         date_created: casual.date(format = 'YYYY-MM-DD')
-//     },
-//     {
-//         comment_body: casual.sentence,
-//         date_created: casual.date(format = 'YYYY-MM-DD')
-//     }
-// ]
-
-
-
 
 
 const seedDatabase = async () => {
@@ -90,13 +65,13 @@ const seedDatabase = async () => {
             returning: true,
         });
 
-        
+
         const games = await Game.bulkCreate(gameData, {
             // individualHooks: true,
             returning: true,
         });
 
-        
+
         for (const post of randomPostData) {
             await Post.create({
                 ...post,
@@ -104,25 +79,11 @@ const seedDatabase = async () => {
                 game_id: games[Math.floor(Math.random() * games.length)].id,
 
             });
-          
 
-        //////////////////////////////////////////////////////////////////////////////////////////
 
-        // for (const comment of commentData) {
-        //     await Comment.create({
-        //         ...comment,
-        //         user_id: users[Math.floor(Math.random() * users.length)].id,
-        //         post_id: post[Math.floor(Math.random() * post.length)].id,
-        //     });
-        // }
-    
-        // const comment = await Comment.bulkCreate(commentData, {
-        //     returning: true,
-        //     user_id: users[Math.floor(Math.random() * users.length)].id,
-        //     post_id: post[Math.floor(Math.random() * post.length)].id,
-        // })
-    }
-        //////////////////////////////////////////////////////////////////////////////////////////
+
+        }
+
     }
     catch (error) {
         console.log(error)
@@ -134,6 +95,6 @@ seedDatabase();
 
 
 
- 
+
 
 
